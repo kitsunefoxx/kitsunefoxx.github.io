@@ -114,8 +114,7 @@ function searchClick(e) {
   let inputBox = document.getElementById('searchInput');
   if (inputBox.style.display) {
     if (inputBox.value) {
-      
-      window.location.href=`collection.html?search=${inputBox.value.trim().split(' ').join('')}`;
+      window.location.href=`collection.html?search=${inputBox.value.trim().split(' ').join('-')}`;
     }
     inputBox.style.display = null;
   }
