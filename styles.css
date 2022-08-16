@@ -87,6 +87,33 @@ header img {
     max-width: 100vw;
 }
 
+#headerIcons {
+  float: right;
+}
+
+#headerIcons button {
+  height: 2em;
+  width: 2em;
+  font-size: 1em;
+  font-weight: 600;
+  color: var(--colorTextLight);
+  background-color: var(--color1);
+  margin: 0;
+  border: none;
+}
+
+#headerIcons input {
+  height: 2em;
+  margin: 0;
+  float: left;
+  border: none;
+  display: none;
+}
+
+header form {
+  display: inline;
+}
+
 .fullwidth {
     width: 100%;
     display: block;

@@ -3,13 +3,21 @@
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <title>Earthly Bookworm</title>
         <script src="serverData.js"></script>
         <script src="bookworm.js"></script>
     </head>
     <body>
         <header>
-            <img src="img/logo_small.png" alt="Bookworm" />           
+            <img src="img/logo_small.png" alt="Bookworm" />
+            <div id="headerIcons" class=".clearFix">
+              <form action="javascript:void(0);" onsubmit="searchClick()">
+                <input type="text" placeholder="Search.." id="searchInput" onsubmit="searchClick()">
+                <button type="submit"><i class="fa fa-search"></i></button>
+              </form>
+              <button><i class="fa fa-shopping-cart"></i></button>
+            </div>        
         </header>
         <main>
           <div id="navCollapse" onclick="toggleNavDisplay()">

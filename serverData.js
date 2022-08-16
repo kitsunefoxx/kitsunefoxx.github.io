@@ -5,7 +5,8 @@
 let serverData = {
   getAllBooks,
   getBook,
-  getGenre
+  getGenre,
+  searchBooks
 };
 
 function getBook(handle) {
@@ -18,6 +19,18 @@ function getAllBooks() {
 
 function getGenre(genre) {
     return sampleBooks.filter(book => book.genre.toLowerCase() == genre.toLowerCase());
+}
+
+// takes a string array of search terms and returns any book that matches all search terms
+function searchBooks(searchTerms) {
+  return sampleBooks.filter(book => {
+    let match = true; // assume match is true for now
+    searchTerms.forEach(term => {
+      // if none of title author ISBN match, book ios not a match 
+      if (!(book.title.toLowerCase().includes(term.toLowerCase()) || book.author.toLowerCase().includes(term.toLowerCase()) || book.ISBN == Number(term))) match = false;
+    });
+    return match;
+  })
 }
 
 

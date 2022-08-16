@@ -47,6 +47,7 @@ function loadBook(){
 
 function loadCollection() {
   let genre = urlParams.get('genre');
+  let searchTerms = urlParams.get('search')
   if (genre) { //If genre papam in url attempt to get books for genre
     document.getElementById('breadcrumbs').innerHTML = `<a href="index.html">Home</a> > ${makeTitle(genre)}`;
     document.getElementById('collectionTitle').innerHTML = makeTitle(genre);
@@ -59,7 +60,18 @@ function loadCollection() {
       });
     }
   }
+  else if (searchTerms) {
+    let results = serverData.searchBooks(searchTerms.split('-'));
+    document.getElementById('breadcrumbs').innerHTML = `<a href="index.html">Home</a> > Search`;
+    document.getElementById('collectionTitle').innerHTML = `Search results for: ${searchTerms.split('-').join(' ')}`;
+    if (results.length > 0) { //If book found set page to display data
+      results.forEach(book => {
+        addCollectionItem(book);
+      });
+    }
+  }
 }
+
 
 function addCollectionItem(book) {
   document.getElementById('collectionPanel').innerHTML +=
@@ -96,3 +108,22 @@ function toggleNavDisplay() {
   if (navbar.style.display) navbar.style.display = null;
   else navbar.style.display = "block";
 }
+
+function searchClick(e) {
+  if (e) e.preventDefault
+  let inputBox = document.getElementById('searchInput');
+  if (inputBox.style.display) {
+    if (inputBox.value) {
+      
+      window.location.href=`collection.html?search=${inputBox.value.trim().split(' ').join('')}`;
+    }
+    inputBox.style.display = null;
+  }
+  else {
+    inputBox.value = null;
+    inputBox.style.display = 'block';
+  }
+}
+
+
+function preventDefault(e) {e.preventDefault;}
