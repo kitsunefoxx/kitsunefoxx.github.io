@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="styles.css">
+        <title>Earthly Bookworm</title>
+        <script src="serverData.js"></script>
+        <script src="bookworm.js"></script>
+    </head>
+    <body>
+        <header>
+            <img src="img/logo_small.png" alt="Bookworm" />           
+        </header>
+        <main>
+          <div id="navCollapse">
+            <hr />
+            <hr />
+            <hr />
+          </div>
+            <nav id="navbar">
+                <ul>
+                  <li><a href="index.html">Home</a></li>
+                  <li><a href="collection.html?genre=all">All Books</a></li>
+                  <li><a href="collection.html?genre=fiction">Fiction</a></li>
+                  <li><a href="collection.html?genre=non-fiction">Non-Fiction</a></li>
+                  <li><a href="collection.html?genre=textbooks">Text Books</a></li>
+                  <li><a href="about.html">About Us</a></li>
+                </ul>
+            </nav>
+            <section id="contentPane" class="padded">                
+              <p id="breadcrumbs"></p>  
+              <section id="bookPanel">
+                  <img class="displayImage" id="coverImage" src="img/404.png" alt="Bookstore" />
+                  <section id="bookDetails">
+                    <h1 id="title"></h1>
+                    <h4 id="author"></h4>
+                    <h2 id="price"></h2>
+                    <p id="stock"></p>
+                    <button id="cartAdd" style="display: none;">Add to Cart</button>
+                    <section id="description"></section>
+                    <p id="ISBN"></p>
+                  </section>
+                </section>
+            </section>
+        </main>
+        <footer>
+          <p>&copy; Earthly Bookworm - Bookstore located in New Zealand</p>
+        </footer>
+
+    </body>
+</html>
