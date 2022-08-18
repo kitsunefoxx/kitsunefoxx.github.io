@@ -3,15 +3,12 @@
 // Uses 'serverData' functions from serverData.js (loaded in html) to act as standin for getting data from backend
 
 document.addEventListener('DOMContentLoaded', start);
-let path;
 let doc;
 let urlParams;
 
 
 function start() {
-  let pathArray = window.location.pathname.split("/");
-  doc = pathArray.pop();
-  path = pathArray.join('/');
+  doc = window.location.pathname.split("/").pop();
   urlParams = new URLSearchParams(window.location.search);
   addListeners();
   if (doc == 'book.html') loadBook();
