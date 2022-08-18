@@ -63,7 +63,7 @@ function loadCollection() {
   else if (searchTerms) {
     let results = serverData.searchBooks(searchTerms.split('-'));
     document.getElementById('breadcrumbs').innerHTML = `<a href="index.html">Home</a> > Search`;
-    document.getElementById('collectionTitle').innerHTML = `Search results for: ${searchTerms.split('-').join(' ')}`;
+    document.getElementById('collectionTitle').innerHTML = `Search results for: ${searchTerms.replace(/-/g, ' ')}`; //replace dashes with spaces for diaplaying search terms
     if (results.length > 0) { //If book found set page to display data
       results.forEach(book => {
         addCollectionItem(book);
@@ -114,7 +114,7 @@ function searchClick(e) {
   let inputBox = document.getElementById('searchInput');
   if (inputBox.style.display) {
     if (inputBox.value) {
-      window.location.href=`collection.html?search=${inputBox.value.trim().split(' ').join('-')}`;
+      window.location.href=`collection.html?search=${inputBox.value.trim().replace(/\s+/g, '-').replace(/-{2,}/g, '-')}`; //replace any spaces with dash and replace any multiple dashes with single dash
     }
     inputBox.style.display = null;
   }
