@@ -21,6 +21,7 @@ function loadBook(){
     
     let bookData = serverData.getBook(handle);
     if (bookData) { //If book found set page to display data
+    setActiveNavItem(bookData.genre);
     document.getElementById('breadcrumbs').innerHTML = `<a href="index.html">Home</a> > <a href="collection.html?genre=${bookData.genre}">${makeTitle(bookData.genre)}</a> > ${bookData.title}`;
     document.getElementById('coverImage').setAttribute('src', `img/${bookData.image}`);
     document.getElementById('cartAdd').style.display = 'inline-block';
@@ -45,11 +46,13 @@ function loadBook(){
 function loadCollection() {
   let genre = urlParams.get('genre');
   let searchTerms = urlParams.get('search')
+  setActiveNavItem(genre);
   if (genre) { //If genre papam in url attempt to get books for genre
     document.getElementById('breadcrumbs').innerHTML = `<a href="index.html">Home</a> > ${makeTitle(genre)}`;
     document.getElementById('collectionTitle').innerHTML = makeTitle(genre);
     let books;
-    if (genre.toLowerCase() == 'all') books = serverData.getAllBooks();
+    if (genre.toLowerCase() == 'all') 
+      books = serverData.getAllBooks();
     else books = serverData.getGenre(genre);
     if (books.length > 0) { //If book found set page to display data
       books.forEach(book => {
@@ -67,6 +70,13 @@ function loadCollection() {
       });
     }
   }
+}
+
+function setActiveNavItem(id) {
+  let activeItems = Array.from(document.getElementsByClassName('active'));
+  activeItems.forEach(item => item.classList.remove('active'));
+  let newActiveItem = document.getElementById(`nav-${id}`)
+  if (newActiveItem) newActiveItem.classList.add('active');
 }
 
 
