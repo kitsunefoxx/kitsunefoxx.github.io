@@ -4,32 +4,35 @@
 
 document.addEventListener('DOMContentLoaded', start);
 let doc;
-let urlParams;
+let urlParams = {};
 
 
 function start() {
   doc = window.location.pathname.split("/").pop();
-  urlParams = new URLSearchParams(window.location.search);
+  window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi,
+  function(_, key, value) {
+    urlParams[key] = value;
+  });
   addListeners();
   if (doc == 'book.html') loadBook();
   else if (doc == 'collection.html') loadCollection();
 }
 
 function loadBook(){
-  let handle = urlParams.get('book');
+  let handle = urlParams.book;
   if (handle) { //If book papam in url attempt to get book
     
     let bookData = serverData.getBook(handle);
     if (bookData) { //If book found set page to display data
     setActiveNavItem(bookData.genre);
-    document.getElementById('breadcrumbs').innerHTML = `<a href="index.html">Home</a> > <a href="collection.html?genre=${bookData.genre}">${makeTitle(bookData.genre)}</a> > ${bookData.title}`;
-    document.getElementById('coverImage').setAttribute('src', `img/${bookData.image}`);
+    document.getElementById('breadcrumbs').innerHTML = '<a href="index.html">Home</a> > <a href="collection.html?genre='+ bookData.genre + '">' + makeTitle(bookData.genre) + '</a> > ' + bookData.title;
+    document.getElementById('coverImage').setAttribute('src', 'img/'+bookData.image+'');
     document.getElementById('cartAdd').style.display = 'inline-block';
     document.getElementById('title').innerHTML = bookData.title;
     document.getElementById('author').innerHTML = bookData.author;
-    document.getElementById('price').innerHTML = `$${bookData.price}`;
+    document.getElementById('price').innerHTML = '$'+bookData.price+'';
     document.getElementById('description').innerHTML = bookData.description;
-    document.getElementById('ISBN').innerHTML = `ISBN: ${bookData.ISBN}`;
+    document.getElementById('ISBN').innerHTML = 'ISBN: '+bookData.ISBN+'';
     let stockValue = bookData.stock;
     let stockElement = document.getElementById('stock')
     stockElement.innerHTML = stockValue;
@@ -44,28 +47,31 @@ function loadBook(){
 }
 
 function loadCollection() {
-  let genre = urlParams.get('genre');
-  let searchTerms = urlParams.get('search')
+  let genre = urlParams.genre;
+  let searchTerms = urlParams.search;
+  console.log(genre);
   setActiveNavItem(genre);
   if (genre) { //If genre papam in url attempt to get books for genre
-    document.getElementById('breadcrumbs').innerHTML = `<a href="index.html">Home</a> > ${makeTitle(genre)}`;
+    document.getElementById('breadcrumbs').innerHTML = '<a href="index.html">Home</a> > '+makeTitle(genre);
     document.getElementById('collectionTitle').innerHTML = makeTitle(genre);
     let books;
     if (genre.toLowerCase() == 'all') 
       books = serverData.getAllBooks();
     else books = serverData.getGenre(genre);
+    console.log(books);
     if (books.length > 0) { //If book found set page to display data
-      books.forEach(book => {
+      books.forEach(function(book) {
         addCollectionItem(book);
       });
     }
   }
   else if (searchTerms) {
-    let results = serverData.searchBooks(searchTerms.split('-'));
-    document.getElementById('breadcrumbs').innerHTML = `<a href="index.html">Home</a> > Search`;
-    document.getElementById('collectionTitle').innerHTML = `Search results for: ${searchTerms.replace(/-/g, ' ')}`; //replace dashes with spaces for diaplaying search terms
+    let searchTermsArr = String(searchTerms).split('-')
+    let results = serverData.searchBooks(String(searchTerms).split('-'));
+    document.getElementById('breadcrumbs').innerHTML = '<a href="index.html">Home</a> > Search';
+    document.getElementById('collectionTitle').innerHTML = 'Search results for: ' + String(searchTerms).replace(/-/g, ' '); //replace dashes with spaces for diaplaying search terms
     if (results.length > 0) { //If book found set page to display data
-      results.forEach(book => {
+      results.forEach(function(book) {
         addCollectionItem(book);
       });
     }
@@ -73,30 +79,32 @@ function loadCollection() {
 }
 
 function setActiveNavItem(id) {
-  let activeItems = Array.from(document.getElementsByClassName('active'));
-  activeItems.forEach(item => item.classList.remove('active'));
-  let newActiveItem = document.getElementById(`nav-${id}`)
+  let activeItems = document.getElementsByClassName('active');
+  for(i=0; i<activeItems.length; i++) {
+    activeItems[i].classList.remove('active');
+  }
+  let newActiveItem = document.getElementById('nav-${id}')
   if (newActiveItem) newActiveItem.classList.add('active');
 }
 
 
 function addCollectionItem(book) {
   document.getElementById('collectionPanel').innerHTML +=
-  `<div class="collectionItem">
-    <a href="book.html?book=${book.handle}">
-      <div>
-        <img src="img/${book.image}" alt="${book.title}" />
-        <h3>${book.title}</h3>
-        <h4>${book.author}</h4>
-        <h3>$${book.price}</h3>
-      </div>
-    </a>
-  </div>`;
+  '<div class="collectionItem">' +
+    '<a href="book.html?book='+book.handle+'">' +
+      '<div>' +
+        '<img src="img/'+book.image+'" alt="'+book.title+'" />' +
+        '<h3>'+book.title+'</h3>' +
+        '<h4>'+book.author+'</h4>' +
+        '<h3>$'+book.price+'</h3>' +
+      '</div>' +
+    '</a>' +
+  '</div>';
 }
 
 function makeTitle(str) {
   let strArray = str.split('-');
-  return strArray.map(element => {
+  return strArray.map(function(element) {
     return element.charAt(0).toUpperCase() + element.slice(1).toLowerCase();
   }).join(' ');
 }
@@ -121,7 +129,7 @@ function searchClick(e) {
   let inputBox = document.getElementById('searchInput');
   if (inputBox.style.display) {
     if (inputBox.value) {
-      window.location.href=`collection.html?search=${inputBox.value.trim().replace(/\s+/g, '-').replace(/-{2,}/g, '-')}`; //replace any spaces with dash and replace any multiple dashes with single dash
+      window.location.href='collection.html?search='+inputBox.value.trim().replace(/\s+/g, '-').replace(/-{2,}/g, '-'); //replace any spaces with dash and replace any multiple dashes with single dash
     }
     inputBox.style.display = null;
   }
@@ -130,6 +138,3 @@ function searchClick(e) {
     inputBox.style.display = 'block';
   }
 }
-
-
-function preventDefault(e) {e.preventDefault;}

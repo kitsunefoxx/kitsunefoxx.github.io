@@ -6,35 +6,35 @@ let serverData;
 
 { // block to encapsulate scope, only functions added to serverData variable can be accesed through the variable
 
-let getBook = (handle) => {
-  return sampleBooks.find(book => (book.handle.toLowerCase() == handle.toLowerCase()));  
+let getBook = function(handle) {
+  return sampleBooks.find(function(book) {return (book.handle.toLowerCase() == handle.toLowerCase());});  
 }
 
-let getAllBooks = () => {
+let getAllBooks = function() {
   return sampleBooks;
 }
 
-let getGenre = (genre) => {
-    return sampleBooks.filter(book => book.genre.toLowerCase() == genre.toLowerCase());
+let getGenre = function(genre) {
+    return sampleBooks.filter(function(book) {return (book.genre.toLowerCase() == genre.toLowerCase());});
 }
 
 // takes a string array of search terms and returns any book that matches all search terms
-let searchBooks = (searchTerms) => {
-  return sampleBooks.filter(book => {
+let searchBooks = function(searchTerms) {
+  return sampleBooks.filter(function(book) {
     let match = true; // assume match is true for now
-    searchTerms.forEach(term => {
+    searchTerms.forEach(function(term) {
       // if none of title author ISBN match, book ios not a match 
-      if (!(book.title.toLowerCase().includes(term.toLowerCase()) || book.author.toLowerCase().includes(term.toLowerCase()) || book.ISBN == Number(term))) match = false;
+      if (!(book.title.toLowerCase().indexOf(term.toLowerCase()) >= 0 || book.author.toLowerCase().indexOf(term.toLowerCase()) >= 0 || book.ISBN == Number(term))) match = false;
     });
     return match;
   })
 }
 
 serverData = {
-  getAllBooks,
-  getBook,
-  getGenre,
-  searchBooks
+  getAllBooks: getAllBooks,
+  getBook: getBook,
+  getGenre: getGenre,
+  searchBooks: searchBooks
 };
 
 
