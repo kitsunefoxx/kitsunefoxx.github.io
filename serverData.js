@@ -2,27 +2,24 @@
  File holds sample book data and provides functions to use as standin for getting backend data in sample website
 */
 
-let serverData = {
-  getAllBooks,
-  getBook,
-  getGenre,
-  searchBooks
-};
+let serverData;
 
-function getBook(handle) {
+{ // block to encapsulate scope, only functions added to serverData variable can be accesed through the variable
+
+let getBook = (handle) => {
   return sampleBooks.find(book => (book.handle.toLowerCase() == handle.toLowerCase()));  
 }
 
-function getAllBooks() {
+let getAllBooks = () => {
   return sampleBooks;
 }
 
-function getGenre(genre) {
+let getGenre = (genre) => {
     return sampleBooks.filter(book => book.genre.toLowerCase() == genre.toLowerCase());
 }
 
 // takes a string array of search terms and returns any book that matches all search terms
-function searchBooks(searchTerms) {
+let searchBooks = (searchTerms) => {
   return sampleBooks.filter(book => {
     let match = true; // assume match is true for now
     searchTerms.forEach(term => {
@@ -33,6 +30,12 @@ function searchBooks(searchTerms) {
   })
 }
 
+serverData = {
+  getAllBooks,
+  getBook,
+  getGenre,
+  searchBooks
+};
 
 
 let sampleBooks = [
@@ -71,9 +74,6 @@ let sampleBooks = [
   }
 ]
 
-
-
-
-
+}
 
 
