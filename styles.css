@@ -18,21 +18,31 @@ body {
     font-family: 'Josefin Sans', sans-serif;
 }
 
-main {
+.main {
+    min-height: calc(100vh - 225px);
     min-height: calc(100vh - var(--headerHeight) - var(--footerHeight) - 2 * var(--horizontalBorderWidth));
 }
 
 #navCollapse {
+    background-color: #353330;
+    color: white;
+    width: 50px;
+    height: 50px;
+    top: 135px;
     background-color: var(--color2);
     color: var(--colorTextLight);
     width: var(--navCollapseSize);
     height: var(--navCollapseSize);
     display: inline-block;
     position: absolute;
-    top: calc(var(--heaerHeight) + var(--horizontalBorderWidth));
+    top: calc(var(--headerHeight) + var(--horizontalBorderWidth));
 }
 
 #navCollapse hr {
+    height: 7px;
+    border-radius: 7px;
+    background-color: white;
+    margin: 7px;
     height: calc(var(--navCollapseSize) / 7);
     border-radius: calc(var(--navCollapseSize) / 7);
     border: none;
@@ -40,8 +50,9 @@ main {
     margin: calc(var(--navCollapseSize) / 7);
 }
 
-nav {
+.nav {
     display: none;
+    background-color: #353330;
     background-color: var(--color2);
     color: var(--colorTextLight);
     padding: 1em;
@@ -51,32 +62,37 @@ nav {
     font-size: larger;
 }
 
-nav ul {
+.nav ul {
     list-style-type: none;
     padding: 0;
 }
 
-nav li {
+.nav li {
     margin-top: 1em;
 }
 
-nav a {
+.nav a {
+    color: white;
     color: var(--colorTextLight);
     text-decoration: none;
 }
 
-nav a:hover {
+.nav a:hover {
   opacity: 0.8;
 }
 
-nav a.active {
+.nav a.active {
     opacity: 0.5;
 }
 
-header {
+.header {
+    background-color: #03380e;
     background-color: var(--color1);
+    border-bottom: 10px solid #353330;
     border-bottom: var(--horizontalBorderWidth) solid var(--color3);
+    color: white;
     color: var(--colorTextLight);
+    height: 125px;
     height: var(--headerHeight);
     overflow: hidden;
 }
@@ -85,8 +101,9 @@ h1 {
     font-size: xx-large;
 }
 
-header img {
+.header img {
     display: inline;
+    max-height: 125px;
     max-height: var(--headerHeight);
     max-width: 100vw;
 }
@@ -100,6 +117,8 @@ header img {
   width: 2em;
   font-size: 1em;
   font-weight: 600;
+  color: white;
+  background-color: #03380e;
   color: var(--colorTextLight);
   background-color: var(--color1);
   margin: 0;
@@ -114,7 +133,7 @@ header img {
   display: none;
 }
 
-header form {
+.header form {
   display: inline;
 }
 
@@ -128,13 +147,18 @@ header form {
 .displayImage {
     width: 80%;
     display: block;
+    border: 2px solid black;
     border: 2px solid var(--colorTextDark);
     border-radius: 10px;
     margin-left: auto;
     margin-right: auto;
 }
 
-footer {
+.footer {
+    background-color: #03380e;
+    color: white;
+    height: 80px;
+    border-top: 10px solid #5e3904;
     background-color: var(--color1);
     border-top: var(--horizontalBorderWidth) solid var(--color3);
     color: var(--colorTextLight);
@@ -164,8 +188,10 @@ footer {
 }
 
 #bookPanel button {
+    background-color: #5e3904;
     background-color: var(--color3);
     padding: 1em;
+    color: white;
     color: var(--colorTextLight);
     border: none;
     border-radius: 0.5em;
@@ -176,7 +202,8 @@ footer {
     margin-left: auto;
     margin-right: auto;
     max-width: 250px;
-    border: 1px solid var(--colorTextDark);
+    border: 1px solid black;
+    color: black;
     color: var(--colorTextDark);
 }
 
@@ -192,7 +219,8 @@ footer {
 }
 
 #breadcrumbs, #collectionTitle {
-    margin-left: var(--navCollapseSize);
+  margin-left: 50px;
+  margin-left: var(--navCollapseSize);
 }
 
 #collectionPanel {
@@ -236,12 +264,12 @@ footer {
         display: none;
     }
 
-    main {
+    .main {
         display: grid;
         grid-template-columns: 150px auto;
     }
 
-    nav {
+    .nav {
         display: inline-block;
         position: inherit;
         grid-column-start: 1;
