@@ -11,12 +11,15 @@
     <body>
         <header class="header">
             <img src="img/logo_small.png" alt="Bookworm" />
-            <div id="headerIcons" class=".clearFix">
-              <form action="javascript:void(0);" onsubmit="searchClick()">
-                <input type="text" placeholder="Search.." id="searchInput" onsubmit="searchClick()">
-                <button type="submit"><i class="fa fa-search"></i></button>
-              </form>
-              <button><i class="fa fa-shopping-cart"></i></button>
+            <div id="headerBar" class=".clearFix">
+              <div id="headerIcons" class=".clearFix">
+                <form action="javascript:void(0);" onsubmit="searchClick()">
+                  <input type="text" placeholder="Search.." id="searchInput" onsubmit="searchClick()">
+                  <button type="submit"><i class="fa fa-search"></i></button>
+                </form>
+                <button><i class="fa fa-shopping-cart"></i></button>
+                <button><i class="fa fa-user"></i></button>
+              </div>
             </div>          
         </header>
         <main class="main">
@@ -25,16 +28,33 @@
             <hr />
             <hr />
           </div>
-            <nav class="nav" id="navbar">
-                <ul>
-                  <li><a href="index.html">Home</a></li>
-                  <li><a id="nav-all" href="collection.html?genre=all">All Books</a></li>
-                  <li><a id="nav-fiction" href="collection.html?genre=fiction">Fiction</a></li>
-                  <li><a id="nav-non-fiction" href="collection.html?genre=non-fiction">Non-Fiction</a></li>
-                  <li><a id="nav-textbooks" href="collection.html?genre=textbooks">Text Books</a></li>
-                  <li><a class="active" href="about.html">About Us</a></li>
-                </ul>
-            </nav>
+          <nav class="nav" id="navbar">
+            <ul id="navTopBar">
+              <li><a href="index.html">Home</a></li>
+              <li><a id="nav-new-releases" href="collection.html?genre=new-releases">New Releases</a></li>
+              <li><a id="best-sellers" href="collection.html?genre=best-sellers">Best Sellers</a></li>
+              <li><a id="specials" href="collection.html?genre=specials">Specials</a></li>
+              <li><a class="active" href="about.html">Our Story</a></li>
+            </ul>
+            <ul id="navSideBar">
+                <li>
+                  <a id="nav-children" href="collection.html?genre=children">Children</a>
+                  <ul>
+                    <li><a id="nav-children-activity" href="collection.html?genre=children&subgenre=activity">Activity</a></li>
+                    <li><a id="nav-children-fiction" href="collection.html?genre=children&subgenre=fiction">Fiction</a></li>
+                    <li><a id="nav-children-non-fiction" href="collection.html?genre=children&subsubgenre=non-fiction">Non-Fiction</a></li>
+                  </ul>
+                </li>
+                <li><a id="nav-cookbooks" href="collection.html?genre=cookbooks">Cookbooks</a></li>
+                <li><a id="nav-family-health" href="collection.html?genre=family-health">Family & Health</a></li>
+                <li><a id="nav-fiction" href="collection.html?genre=fiction">Fiction</a></li>
+                <li><a id="nav-non-fiction" href="collection.html?genre=non-fiction">Non-Fiction</a></li>
+                <li><a id="nav-home-garden" href="collection.html?genre=home-garden">Home & Garden</a></li>
+                <li><a id="nav-maoritanga" href="collection.html?genre=maoritanga">Maoritanga</a></li>
+                <li><a id="nav-travel" href="collection.html?genre=travel">Travel</a></li>
+                <li><a id="nav-young-adult" href="collection.html?genre=young-adult">Young Adult</a></li>
+              </ul>
+          </nav>
             <section id="contentPane" class="padded about">
               <p id="breadcrumbs"><a href="index.html">Home</a> > About Us</p>
                 <h1>About Us</h1>
