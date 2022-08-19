@@ -7,7 +7,7 @@ let serverData;
 { // block to encapsulate scope, only functions added to serverData variable can be accesed through the variable
 
 let getBook = function(handle) {
-  return sampleBooks.find(function(book) {return (book.handle.toLowerCase() == handle.toLowerCase());});  
+  return sampleBooks.filter(function(book) {return (book.handle.toLowerCase() == handle.toLowerCase());})[0];  
 }
 
 let getAllBooks = function() {
