@@ -6,10 +6,10 @@
     --color3: #5e3904;;
     --colorTextDark: black;
     --colorTextLight: white;
-    --headerHeight: 125px;
+    --headerHeight: 150px;
     --footerHeight: 80px;
     --horizontalBorderWidth: 10px;
-    --navCollapseSize: 80px;
+    --navCollapseSize: 50px;
 }
 
 body {
@@ -28,14 +28,14 @@ body {
     color: white;
     width: 50px;
     height: 50px;
-    top: 135px;
+    top: 100px;
     background-color: var(--color2);
     color: var(--colorTextLight);
     width: var(--navCollapseSize);
     height: var(--navCollapseSize);
     display: inline-block;
     position: absolute;
-    top: calc(var(--headerHeight) + var(--horizontalBorderWidth));
+    top: calc(var(--headerHeight) - var(--navCollapseSize));
 }
 
 #navCollapse hr {
@@ -57,8 +57,8 @@ body {
     color: var(--colorTextLight);
     padding: 1em;
     position: absolute;
-    top: calc(var(--heaerHeight) + var(--horizontalBorderWidth));
-    left: var(--navCollapseSize);
+    width: 100%;
+    top: var(--heaerHeight);    
     font-size: larger;
 }
 
@@ -69,6 +69,11 @@ body {
 
 .nav li {
     margin-top: 1em;
+}
+
+.nav li ul {
+  padding-left: 2em;
+  font-size: smaller;
 }
 
 .nav a {
@@ -88,8 +93,6 @@ body {
 .header {
     background-color: #03380e;
     background-color: var(--color1);
-    border-bottom: 10px solid #353330;
-    border-bottom: var(--horizontalBorderWidth) solid var(--color3);
     color: white;
     color: var(--colorTextLight);
     height: 125px;
@@ -103,9 +106,17 @@ h1 {
 
 .header img {
     display: inline;
-    max-height: 125px;
-    max-height: var(--headerHeight);
+    max-height: 100px;
+    max-height: calc(var(--headerHeight) - var(--navCollapseSize));
     max-width: 100vw;
+}
+
+#headerBar {
+  background-color: #5e3904;
+  background-color: var(--color3);
+  height: 50px;
+  height: var(--navCollapseSize);
+  z-index: 2;
 }
 
 #headerIcons {
@@ -113,21 +124,24 @@ h1 {
 }
 
 #headerIcons button {
-  height: 2em;
-  width: 2em;
-  font-size: 1em;
+  height: 50px;
+  width: 50px;
+  height: var(--navCollapseSize);
+  width: var(--navCollapseSize);
+  font-size: 1.5em;
   font-weight: 600;
   color: white;
-  background-color: #03380e;
+  background-color: #5e3904;
   color: var(--colorTextLight);
-  background-color: var(--color1);
+  background-color: var(--color3);
   margin: 0;
   border: none;
 }
 
 #headerIcons input {
-  height: 2em;
-  margin: 0;
+  height: 36px;
+  height: calc(var(--navCollapseSize) - 14px);
+  margin: 5px 0;
   float: left;
   border: none;
   display: none;
@@ -240,15 +254,33 @@ h1 {
     .main {
         display: -ms-grid;
         display: grid;
-        -ms-grid-columns: 150px auto;
-        grid-template-columns: 150px auto;
+        -ms-grid-columns: 200px auto;
+        grid-template-columns: 200px auto;
     }
 
     .nav {
         display: inline-block;
         position: inherit;
+        width: inherit;
         -ms-grid-column: 1;
         grid-column: 1;
+    }
+
+    #navTopBar {
+      position: absolute;
+      margin: 0;
+      top: 100px;
+      height: 50px;
+      top: calc(var(--headerHeight) - var(--navCollapseSize));
+      height: var(--navCollapseSize);
+    }
+
+    #navTopBar li {
+      float:left;
+      background-color: #5e3904;
+      background-color: var(--color3);
+      padding: 8px;
+      margin: 8px;
     }
 
     #contentPane {
