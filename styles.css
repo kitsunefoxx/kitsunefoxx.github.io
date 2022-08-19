@@ -18,11 +18,6 @@ body {
     font-family: 'Josefin Sans', sans-serif;
 }
 
-.main {
-    min-height: calc(100vh - 225px);
-    min-height: calc(100vh - var(--headerHeight) - var(--footerHeight) - 2 * var(--horizontalBorderWidth));
-}
-
 #navCollapse {
     background-color: #353330;
     color: white;
