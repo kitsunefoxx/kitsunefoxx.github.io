@@ -49,16 +49,15 @@ function loadBook(){
 function loadCollection() {
   let genre = urlParams.genre;
   let searchTerms = urlParams.search;
-  console.log(genre);
   setActiveNavItem(genre);
   if (genre) { //If genre papam in url attempt to get books for genre
     document.getElementById('breadcrumbs').innerHTML = '<a href="index.html">Home</a> > '+makeTitle(genre);
     document.getElementById('collectionTitle').innerHTML = makeTitle(genre);
     let books;
-    if (genre.toLowerCase() == 'all') 
+    if (genre.toLowerCase() == 'all' || genre.toLowerCase() == 'new-releases' || genre.toLowerCase() == 'best-sellers') { 
       books = serverData.getAllBooks();
+    }
     else books = serverData.getGenre(genre);
-    console.log(books);
     if (books.length > 0) { //If book found set page to display data
       books.forEach(function(book) {
         addCollectionItem(book);
@@ -83,7 +82,7 @@ function setActiveNavItem(id) {
   for(i=0; i<activeItems.length; i++) {
     activeItems[i].classList.remove('active');
   }
-  let newActiveItem = document.getElementById('nav-${id}')
+  let newActiveItem = document.getElementById('nav-'+id)
   if (newActiveItem) newActiveItem.classList.add('active');
 }
 
@@ -119,6 +118,7 @@ function addToCart() {
 }
 
 function toggleNavDisplay() {
+  console.log('clicked')
   let navbar = document.getElementById("navbar");
   if (navbar.style.display) navbar.style.display = null;
   else navbar.style.display = "block";
