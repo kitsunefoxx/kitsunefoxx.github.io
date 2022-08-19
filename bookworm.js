@@ -27,7 +27,7 @@ function loadBook(){
     setActiveNavItem(bookData.genre);
     document.getElementById('breadcrumbs').innerHTML = '<a href="index.html">Home</a> > <a href="collection.html?genre='+ bookData.genre + '">' + makeTitle(bookData.genre) + '</a> > ' + bookData.title;
     document.getElementById('coverImage').setAttribute('src', 'img/'+bookData.image+'');
-    document.getElementById('cartAdd').style.display = 'inline-block';
+    document.getElementsByClassName('cartAdd')[0].style.display = 'inline-block';
     document.getElementById('title').innerHTML = bookData.title;
     document.getElementById('author').innerHTML = bookData.author;
     document.getElementById('price').innerHTML = '$'+bookData.price+'';
@@ -40,7 +40,7 @@ function loadBook(){
     else if (stockValue.toLowerCase() == 'low stock') stockElement.style.color = 'orange';
     else {
       stockElement.style.color = 'red'
-      document.getElementById('cartAdd').setAttribute('disabled', 'true');
+      document.getElementsByClassName('cartAdd')[0].setAttribute('disabled', 'true');
     }
     }
   }
