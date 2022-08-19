@@ -93,9 +93,10 @@ function addCollectionItem(book) {
     '<a href="book.html?book='+book.handle+'">' +
       '<div>' +
         '<img src="img/'+book.image+'" alt="'+book.title+'" />' +
-        '<h3>'+book.title+'</h3>' +
-        '<h4>'+book.author+'</h4>' +
-        '<h3>$'+book.price+'</h3>' +
+        '<div class="bookTitle">'+book.title+'</div>' +
+        '<div class="bookPrice">$'+book.price+'</div>' +
+        '<div class="bookAuthor">'+book.author+'</div>' +
+        '<div class="cartAddContainer"><button class="cartAdd">Add to Cart</button></div>' +
       '</div>' +
     '</a>' +
   '</div>';

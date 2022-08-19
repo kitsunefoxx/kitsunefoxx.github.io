@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500&display=swap');
 
 :root {
     --color1: #03380e;
@@ -249,7 +249,7 @@ h1 {
     text-align: left;
 }
 
-#bookPanel button {
+.cartAdd {
     background-color: #5e3904;
     background-color: var(--color3);
     padding: 1em;
@@ -266,13 +266,56 @@ h1 {
     border: 1px solid black;
     color: black;
     color: var(--colorTextDark);
-    justify-content: flex-start;
+    padding-bottom: 0.5em;
+    position: relative;
 }
 
 .collectionItem img {
     width: 100%;
-    -ms-grid-column-span: 1;
 }
+
+.collectionItem a {
+  color: black;
+  color: var(--colorTextDark);
+  text-decoration: none;
+}
+
+.collectionItem .bookTitle {
+  width: 70%;
+  text-align: left;
+  display: inline-block;
+  font-weight: 500;
+}
+
+.collectionItem .bookPrice {
+  width: 30%;
+  text-align: right;
+  font-size: large;
+  font-weight: 500;
+  display: inline-block;
+}
+
+.collectionItem .bookAuthor {
+  width: 100%;
+  text-align: left;
+  font-size: smaller;
+  display: block;
+  margin-bottom: 4em;
+}
+
+.collectionItem .cartAdd {
+  text-align: center;
+  padding: 0.5em;
+}
+
+.collectionItem .cartAddContainer {
+  width: 100%;
+  position: absolute;
+  bottom: 0.5em;
+  display: flex;
+  justify-content: center;
+}
+
 
 .clearfix::after {
     content: " ";
