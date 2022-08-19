@@ -430,9 +430,7 @@ h1 {
       text-shadow: -4px 0 black, 0 4px black, 4px 0 black, 0 -4px black;
     }
 
-    .collectionItem {
-      max-width: 250px;
-    }
+   
 
     #collectionPanel {
       justify-content: flex-start;
@@ -461,6 +459,20 @@ h1 {
       -ms-grid-column: 5;
       grid-column: 5;
     }
+}
+
+@media all and (min-width: 888px) {
+  .collectionItem {
+    max-width: 30%;
+    flex: 1 1 30%;
+  }
+}
+
+@media all and (min-width: 1025px) {
+  .collectionItem {
+    max-width: 250px;
+    flex: 1 1 21%;
+  }
 }
 
 
