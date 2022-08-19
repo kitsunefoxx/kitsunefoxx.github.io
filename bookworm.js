@@ -81,7 +81,7 @@ function loadCollection() {
 
 function setActiveNavItem(id) {
   let activeItems = document.getElementsByClassName('active');
-  for(i=0; i<activeItems.length; i++) {
+  for(let i=0; i<activeItems.length; i++) {
     activeItems[i].classList.remove('active');
   }
   let newActiveItem = document.getElementById('nav-'+id)
@@ -90,11 +90,17 @@ function setActiveNavItem(id) {
 
 
 function addCollectionItem(book) {
+  let ratingPanel = '<div class="ratingPanel">'
+  for(let i=1; i <= 5; i++){
+    if (book.rating >= i) ratingPanel += '<span class="fa fa-star checked"></span>'
+    else ratingPanel += '<span class="fa fa-star"></span>'
+  }
+  ratingPanel += '</div>'
   document.getElementById('collectionPanel').innerHTML +=
   '<div class="collectionItem">' +
     '<a href="book.html?book='+book.handle+'">' +
       '<div>' +
-        '<img src="img/'+book.image+'" alt="'+book.title+'" />' +
+        '<img src="img/'+book.image+'" alt="'+book.title+'" />' + ratingPanel +
         '<div class="bookTitle">'+book.title+'</div>' +
         '<div class="bookPrice">$'+book.price+'</div>' +
         '<div class="bookAuthor">'+book.author+'</div>' +

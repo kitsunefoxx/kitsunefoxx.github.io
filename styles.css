@@ -177,6 +177,7 @@ h1 {
 
 .footer {
   margin-top: 1em;
+  padding-left: 0.5em;
   height: var(--footerHeightMobile);  
   background-color: #03380e;
     color: white;
@@ -282,6 +283,20 @@ h1 {
     width: 100%;
 }
 
+.collectionItem .checked {
+  color: yellow;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.collectionItem .ratingPanel {
+  width: 100;
+  display: flex;
+  justify-content: center;
+  margin-top: -2em;
+  height: 2em;
+  font-size: 1.5em;
+}
+
 .collectionItem a {
   color: black;
   color: var(--colorTextDark);
@@ -289,18 +304,20 @@ h1 {
 }
 
 .collectionItem .bookTitle {
-  width: 70%;
+  width: 65%;
   text-align: left;
   display: inline-block;
   font-weight: 500;
+  padding-left: 1%;
 }
 
 .collectionItem .bookPrice {
-  width: 30%;
+  width: 33%;
   text-align: right;
   font-size: large;
   font-weight: 500;
   display: inline-block;
+  padding-right: 1%;
 }
 
 .collectionItem .bookAuthor {
@@ -309,6 +326,7 @@ h1 {
   font-size: smaller;
   display: block;
   margin-bottom: 4em;
+  padding-left: 1%;
 }
 
 .collectionItem .cartAdd {
