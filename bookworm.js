@@ -63,6 +63,7 @@ function loadCollection() {
         addCollectionItem(book);
       });
     }
+    else document.getElementById('collectionPanel').innerHTML = '<h2>Sorry Nothing to Show!!</h2><p> We dont currently have anything matching that criteria. Please check back here in the future or <a href="">Contact Us</a> to let us know what we are missing</p>'
   }
   else if (searchTerms) {
     let searchTermsArr = String(searchTerms).split('-')
@@ -74,6 +75,7 @@ function loadCollection() {
         addCollectionItem(book);
       });
     }
+    else document.getElementById('collectionPanel').innerHTML = '<h2>Sorry Nothing to Show!!</h2><p> We dont currently have anything matching that criteria. Please check back here in the future or <a href="">Contact Us</a> to let us know what we are missing</p>'
   }
 }
 
