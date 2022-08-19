@@ -13,6 +13,10 @@
     --navCollapseSize: 50px;
 }
 
+.collectionContent {
+  min-height: calc(100vh - var(--headerHeight) - var(--footerHeightMobile) - var(--horizontalBorderWidth) - 26vw - 2em);
+}
+
 .main {
   min-height: calc(100vh - var(--headerHeight) - var(--footerHeightMobile) - var(--horizontalBorderWidth));
 }
@@ -263,8 +267,8 @@ h1 {
 }
 
 .collectionItem {
-    margin: 1em;
-    max-width: 250px;
+    max-width: 48%;
+    flex: 1 1 40%;
     border: 1px solid black;
     color: black;
     color: var(--colorTextDark);
@@ -330,7 +334,9 @@ h1 {
 #collectionPanel {
     display: flex;
     flex-flow: row wrap;
-    justify-content: flex-start;
+    justify-content: space-between;
+    row-gap: 0.5em;
+    column-gap: 0.5em;
 }
 
 #collectionTitle {
@@ -345,6 +351,10 @@ h1 {
 
 
 @media all and (min-width: 768px) {
+
+  .collectionContent {
+    min-height: calc(100vh - var(--headerHeight) - var(--footerHeight) - var(--horizontalBorderWidth) - 26vw - 2em + 1px);
+  }
 
     #navCollapse {
         display: none;
@@ -418,6 +428,16 @@ h1 {
     #collectionTitle {
       font-size: 4em;
       text-shadow: -4px 0 black, 0 4px black, 4px 0 black, 0 -4px black;
+    }
+
+    .collectionItem {
+      max-width: 250px;
+    }
+
+    #collectionPanel {
+      justify-content: flex-start;
+      row-gap: 1em;
+      column-gap: 1em;
     }
 
     .footer {
