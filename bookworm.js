@@ -25,14 +25,15 @@ function loadBook(){
     if (bookData) { //If book found set page to display data
       setActiveNavItem(bookData.genre);
       document.getElementById('breadcrumbs').innerHTML = '<a href="index.html">Home</a> > <a href="collection.html?genre='+ bookData.genre + '">' + makeTitle(bookData.genre) + '</a> > ' + bookData.title;
-      document.getElementById('coverImage').setAttribute('src', 'img/'+bookData.image+'');
+      document.getElementById('coverImage').setAttribute('src', 'img/'+bookData.image);
+      document.getElementById('coverImage').setAttribute('alt', bookData.title);
       document.getElementsByClassName('cartAdd')[0].style.display = 'inline-block';
       document.getElementById('title').innerHTML = bookData.title;
       document.getElementById('author').innerHTML = bookData.author;
-      document.getElementById('price').innerHTML = '$'+bookData.price+'';
-      document.getElementById('cover').innerHTML = bookData.cover+'';
+      document.getElementById('price').innerHTML = '$'+bookData.price;
+      document.getElementById('cover').innerHTML = bookData.cover;
       document.getElementById('description').innerHTML = bookData.description;
-      document.getElementById('ISBN').innerHTML = 'ISBN: '+bookData.ISBN+'';
+      document.getElementById('ISBN').innerHTML = 'ISBN: '+bookData.ISBN;
       document.getElementById('rating').innerHTML = makeRatingPanel(bookData.rating);
       setSuggestedTitles(bookData);
       let stockValue = bookData.stock;
@@ -51,6 +52,14 @@ function loadBook(){
         document.getElementsByClassName('cartAdd')[0].style.display = 'none';
       }
     }
+    else {
+      document.getElementById('messageBox').style.display = 'block';
+      setSuggestedTitles()
+    }
+  }
+  else {
+    document.getElementById('messageBox').style.display = 'block';
+    setSuggestedTitles()
   }
 }
 
