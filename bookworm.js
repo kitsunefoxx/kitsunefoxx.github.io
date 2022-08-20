@@ -97,7 +97,8 @@ function loadCollection() {
     let searchTermsArr = String(searchTerms).split('-')
     let results = serverData.searchBooks(String(searchTerms).split('-'));
     document.getElementById('breadcrumbs').innerHTML = '<a href="index.html">Home</a> > Search';
-    document.getElementById('collectionTitle').innerHTML = 'Search results for: ' + String(searchTerms).replace(/-/g, ' '); //replace dashes with spaces for diaplaying search terms
+    document.getElementById('collectionTitle').innerHTML = 'Search';
+    document.getElementById('searchTitle').innerHTML = 'Search results for: ' + String(searchTerms).replace(/-/g, ' '); //replace dashes with spaces for diaplaying search terms
     if (results.length > 0) { //If book found set page to display data
       results.forEach(function(book) {
         document.getElementById('collectionPanel').innerHTML += makeCollectionItem(book);
