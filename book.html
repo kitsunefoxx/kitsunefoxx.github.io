@@ -23,6 +23,9 @@
             </div>          
         </header>
         <main class="main">
+          <section id="suggestedTitles" class="fullwidth">
+
+          </section>
           <div id="navCollapse">
             <hr />
             <hr />
@@ -59,17 +62,29 @@
               <noscript><h2>This site requires Javascript to function:<br />Please enable Javascript in your browser.</h2></noscript>               
               <p id="breadcrumbs"></p>  
               <section id="bookPanel">
-                  <img class="displayImage" id="coverImage" src="img/404.png" alt="Bookstore" />
-                  <section id="bookDetails">
-                    <h1 id="title"></h1>
-                    <h4 id="author"></h4>
-                    <h2 id="price"></h2>
-                    <p id="stock"></p>
-                    <button class="cartAdd" style="display: none;">Add to Cart</button>
-                    <section id="description"></section>
-                    <p id="ISBN"></p>
-                  </section>
+                <img class="displayImage" id="coverImage" src="img/404.png" alt="Bookstore" />
+                <section id="bookDetails" class="clearFix">
+                  <h2 id="price"></h2>
+                  <h1 id="title"></h1>
+                  <h3 id="author"></h3>
+                  <p id="cover"></p>
+                  <p id="ISBN"></p>
+                  <div id="rating"></div>
                 </section>
+                <section id="bookPurchase">
+                  <p id="stock"></p>
+                  <div id="shipping">
+                    <input type="radio" id="pickup" name="shipping" value="pickup">
+                    <label for="pickup">Pick Up - Free</label><br>
+                    <input type="radio" id="standard" name="shipping" value="standard" checked="checked">
+                    <label for="standard">Standard Shipping - $5 (Free for Members)</label><br>
+                    <input type="radio" id="overnight" name="shipping" value="overnight">
+                    <label for="overnight">Overnight Shipping - $15 ($10 for Members)</label><br>
+                  </div>
+                  <button class="cartAdd" style="display: none;">Add to Cart</button>
+                </section>
+                <section id="description"></section>
+              </section>
             </section>
         </main>
         <footer class="footer">

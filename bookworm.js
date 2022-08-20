@@ -21,27 +21,46 @@ function start() {
 function loadBook(){
   let handle = urlParams.book;
   if (handle) { //If book papam in url attempt to get book
-    
     let bookData = serverData.getBook(handle);
     if (bookData) { //If book found set page to display data
-    setActiveNavItem(bookData.genre);
-    document.getElementById('breadcrumbs').innerHTML = '<a href="index.html">Home</a> > <a href="collection.html?genre='+ bookData.genre + '">' + makeTitle(bookData.genre) + '</a> > ' + bookData.title;
-    document.getElementById('coverImage').setAttribute('src', 'img/'+bookData.image+'');
-    document.getElementsByClassName('cartAdd')[0].style.display = 'inline-block';
-    document.getElementById('title').innerHTML = bookData.title;
-    document.getElementById('author').innerHTML = bookData.author;
-    document.getElementById('price').innerHTML = '$'+bookData.price+'';
-    document.getElementById('description').innerHTML = bookData.description;
-    document.getElementById('ISBN').innerHTML = 'ISBN: '+bookData.ISBN+'';
-    let stockValue = bookData.stock;
-    let stockElement = document.getElementById('stock')
-    stockElement.innerHTML = stockValue;
-    if (stockValue.toLowerCase() == 'in stock') stockElement.style.color = 'green';
-    else if (stockValue.toLowerCase() == 'low stock') stockElement.style.color = 'orange';
-    else {
-      stockElement.style.color = 'red'
-      document.getElementsByClassName('cartAdd')[0].setAttribute('disabled', 'true');
+      setActiveNavItem(bookData.genre);
+      document.getElementById('breadcrumbs').innerHTML = '<a href="index.html">Home</a> > <a href="collection.html?genre='+ bookData.genre + '">' + makeTitle(bookData.genre) + '</a> > ' + bookData.title;
+      document.getElementById('coverImage').setAttribute('src', 'img/'+bookData.image+'');
+      document.getElementsByClassName('cartAdd')[0].style.display = 'inline-block';
+      document.getElementById('title').innerHTML = bookData.title;
+      document.getElementById('author').innerHTML = bookData.author;
+      document.getElementById('price').innerHTML = '$'+bookData.price+'';
+      document.getElementById('cover').innerHTML = bookData.cover+'';
+      document.getElementById('description').innerHTML = bookData.description;
+      document.getElementById('ISBN').innerHTML = 'ISBN: '+bookData.ISBN+'';
+      document.getElementById('rating').innerHTML = makeRatingPanel(bookData.rating);
+      setSuggestedTitles(bookData);
+      let stockValue = bookData.stock;
+      let stockElement = document.getElementById('stock')
+      stockElement.innerHTML = stockValue;
+      if (stockValue.toLowerCase() == 'in stock') {
+          stockElement.style.color = 'green';
+          document.getElementById('shipping').style.display = 'block';
+      }
+      else if (stockValue.toLowerCase() == 'low stock') {
+        stockElement.style.color = 'orange';
+        document.getElementById('shipping').style.display = 'block';
+      }
+      else {
+        stockElement.style.color = 'red';
+        document.getElementsByClassName('cartAdd')[0].style.display = 'none';
+      }
     }
+  }
+}
+
+function setSuggestedTitles(book) {
+  let suggestions = serverData.getAllBooks()
+  let maxSuggestions = 3;
+  let suggestionsPanel = document.getElementById('suggestedTitles')
+  for (let i = 0; i < maxSuggestions; i++) {
+    if (suggestions[i]) {
+      suggestionsPanel.innerHTML += makeCollectionItem(suggestions[i]);
     }
   }
 }
@@ -60,7 +79,7 @@ function loadCollection() {
     else books = serverData.getGenre(genre);
     if (books.length > 0) { //If book found set page to display data
       books.forEach(function(book) {
-        addCollectionItem(book);
+        document.getElementById('collectionPanel').innerHTML += makeCollectionItem(book);
       });
     }
     else document.getElementById('collectionPanel').innerHTML = '<h2>Sorry Nothing to Show!!</h2><p> We dont currently have anything matching that criteria. Please check back here in the future or <a href="">Contact Us</a> to let us know what we are missing</p>'
@@ -72,7 +91,7 @@ function loadCollection() {
     document.getElementById('collectionTitle').innerHTML = 'Search results for: ' + String(searchTerms).replace(/-/g, ' '); //replace dashes with spaces for diaplaying search terms
     if (results.length > 0) { //If book found set page to display data
       results.forEach(function(book) {
-        addCollectionItem(book);
+        document.getElementById('collectionPanel').innerHTML += makeCollectionItem(book);
       });
     }
     else document.getElementById('collectionPanel').innerHTML = '<h2>Sorry Nothing to Show!!</h2><p> We dont currently have anything matching that criteria. Please check back here in the future or <a href="">Contact Us</a> to let us know what we are missing</p>'
@@ -89,15 +108,9 @@ function setActiveNavItem(id) {
 }
 
 
-function addCollectionItem(book) {
-  let ratingPanel = '<div class="ratingPanel">'
-  for(let i=1; i <= 5; i++){
-    if (book.rating >= i) ratingPanel += '<span class="fa fa-star checked"></span>'
-    else ratingPanel += '<span class="fa fa-star"></span>'
-  }
-  ratingPanel += '</div>'
-  document.getElementById('collectionPanel').innerHTML +=
-  '<div class="collectionItem">' +
+function makeCollectionItem(book) {
+  let ratingPanel = makeRatingPanel(book.rating);
+  let collectionItem = '<div class="collectionItem">' +
     '<a href="book.html?book='+book.handle+'">' +
       '<div>' +
         '<img src="img/'+book.image+'" alt="'+book.title+'" />' + ratingPanel +
@@ -108,6 +121,17 @@ function addCollectionItem(book) {
       '</div>' +
     '</a>' +
   '</div>';
+  return collectionItem;
+}
+
+function makeRatingPanel(rating) {
+  let ratingPanel = '<div class="ratingPanel">'
+  for(let i=1; i <= 5; i++){
+    if (rating >= i) ratingPanel += '<span class="fa fa-star checked"></span>'
+    else ratingPanel += '<span class="fa fa-star"></span>'
+  }
+  ratingPanel += '</div>'
+  return ratingPanel
 }
 
 function makeTitle(str) {
