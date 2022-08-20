@@ -127,10 +127,22 @@ function addToCart() {
 }
 
 function toggleNavDisplay() {
-  console.log('clicked')
   let navbar = document.getElementById("navbar");
   if (navbar.style.display) navbar.style.display = null;
   else navbar.style.display = "block";
+}
+
+function toggleMoreBooks() {
+  let sideBar = document.getElementById('navSideBar');
+  let moreBooks = document.getElementById('moreBooks');
+  if (sideBar.style.display) {
+    sideBar.style.display = null;
+    moreBooks.innerHTML = '+';
+  }
+  else {
+    sideBar.style.display = "block";
+    moreBooks.innerHTML = '-';
+  }
 }
 
 function searchClick(e) {
