@@ -13,6 +13,10 @@
     --navCollapseSize: 50px;
 }
 
+a {
+  text-decoration: none;
+}
+
 .collectionContent {
   min-height: calc(100vh - var(--headerHeight) - var(--footerHeightMobile) - var(--horizontalBorderWidth) - 26vw - 4em);
 }
@@ -177,6 +181,7 @@ h1 {
   flex-wrap: wrap;
   padding-left: 1em;
   padding-right: 1em;
+  
 }
 
 .homeSection {
@@ -184,19 +189,36 @@ h1 {
   flex: 1 0 70%;
   margin: 1em;
   position: relative;
+  overflow: hidden;
   border: 2px solid #353330;
   border: 2px solid var(--color2);
+  border-radius: 1em;
 }
 
 .homeSection h2 {
-  position: absolute;
-  top: 0;
+  display: block;
   text-align: center;
+  font-size: 200%;
+  font-weight: bolder;
+  margin: 0;
+  background-color: #353330;
+  background-color: var(--color2);
+  color: white;
+  color: var(--colorTextLight);
+  padding: 0.2em;
+  text-decoration: none;
 }
 
 .homeSection img {
   width: 100%;
   margin-bottom: -4px;
+  
+}
+
+.homeSection .imagePane {
+  background-size: cover;
+  width: 100%;
+  padding-top: 60%;
 }
 
 
