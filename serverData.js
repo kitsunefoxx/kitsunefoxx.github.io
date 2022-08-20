@@ -48,9 +48,61 @@ let sampleBooks = [
     "ISBN": 9781761261671,
     "description": "<p>For 35 years, the United States and Russia each had their own superhero. Three days ago, America's hero died. One young woman, unassuming and anonymous, might be America's only hope. Her codename...COBALT BLUE</p>",
     "image": "cobalt-blue.png",
-    "cover": "Softcover",
+    "cover": "Paperback",
     "stock": "In Stock",
     "rating": 4
+  },
+  {
+    "handle": "the-midnight-library",
+    "genre": "fiction",
+    "title": "The Midnight Library",
+    "author": "Matt Haig",
+    "price": 32.99,
+    "ISBN": 9781786892720,
+    "description": "<p>When Nora Seed finds herself in the Midnight Library, she has a chance to make things right. Up until now, her life has been full of misery and regret. She feels she has let everyone down, including herself. But things are about to change.</p>",
+    "image": "the-midnight-library.png",
+    "cover": "Paperback",
+    "stock": "In Stock",
+    "rating": 3
+  },
+  {
+    "handle": "where-the-crawdads-sing",
+    "genre": "fiction",
+    "title": "Where the Crawdads Sing",
+    "author": "Delia Owens",
+    "price": 24.99,
+    "ISBN": 9781472157362,
+    "description": "<p>For years, rumours of the 'Marsh Girl' have haunted Barkley Cove, a quiet town on the North Carolina coast. So in late 1969, when handsome Chase Andrews is found dead, the locals immediately suspect Kya Clark, the so-called Marsh Girl. But Kya is not what they say</p>",
+    "image": "where-the-crawdads-sing.png",
+    "cover": "Paperback",
+    "stock": "In Stock",
+    "rating": 4
+  },
+  {
+    "handle": "normal-people",
+    "genre": "fiction",
+    "title": "Normal People",
+    "author": "Sally Rooney",
+    "price": 22.99,
+    "ISBN": 9780571334650,
+    "description": "<p>A story of mutual fascination, friendship and love. It takes us from that first conversation to the years beyond,in the company of two people who try to stay apart but find they can't.</p>",
+    "image": "normal-people.png",
+    "cover": "Paperback",
+    "stock": "In Stock",
+    "rating": 3
+  },
+  {
+    "handle": "the-alchemist",
+    "genre": "fiction",
+    "title": "The Alchemist",
+    "author": "Paulo Coelho",
+    "price": 24.99,
+    "ISBN": 9780062315007,
+    "description": "<p>25th Anniversary Edition. Paulo Coelho's enchanting novel has inspired a devoted following around the world. Lush, evocative, and deeply humane, the story of Santiago is an eternal testament to the transforming power of our dreams and the importance of listening..</p>",
+    "image": "the-alchemist.png",
+    "cover": "Paperback",
+    "stock": "In Stock",
+    "rating": 3
   },
   {
     "handle": "auckland-then-and-now",
@@ -74,7 +126,7 @@ let sampleBooks = [
     "ISBN": 9781305503922,
     "description": "<p>Provide the thorough instruction your students need to build interactive Web sites from scratch with NEW PERSPECTIVES ON HTML5, CSS3, AND JAVASCRIPT, 6E. This edition provides clear, comprehensive coverage of HTML, CSS, and JavaScript with a user-friendly approach that builds from the basics and does not require any prior knowledge on the subject. Detailed explanations of key concepts and skills make even challenging topics accessible to all students. The New Perspectives Series' signature case scenarios and case problems place the basic to most complex concepts within an understandable and practical context. Students develop important problem solving skills as they work through realistic exercises. Proven applications help readers retain the material and utilize what they've learned in a professional environment.</p>",
     "image": "New-Perspectives-on-HTML5-CSS3-and-JavaScript.jpg",
-    "cover": "Softcover",
+    "cover": "Paperback",
     "stock": "Low Stock",
     "rating": 3
   }

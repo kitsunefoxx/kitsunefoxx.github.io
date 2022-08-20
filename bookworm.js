@@ -56,7 +56,7 @@ function loadBook(){
 
 function setSuggestedTitles(book) {
   let suggestions = serverData.getAllBooks()
-  let maxSuggestions = 3;
+  let maxSuggestions = 6;
   let suggestionsPanel = document.getElementById('suggestedTitles')
   for (let i = 0; i < maxSuggestions; i++) {
     if (suggestions[i]) {
