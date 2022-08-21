@@ -9,99 +9,100 @@
         <script src="bookworm.js"></script>
     </head>
     <body>
-        <header class="header">
-            <img src="img/logo_small.png" alt="Bookworm" />
-            <div id="headerBar" class=".clearFix">
-              <div id="headerIcons" class=".clearFix">
+    <header class="header">
+        <img src="img/logo_small.png" alt="Bookworm" />
+        <div id="headerBar" class=".clearFix">
+            <div id="headerIcons" class=".clearFix">
                 <form action="javascript:void(0);" onsubmit="searchClick()">
-                  <input type="text" placeholder="Search.." id="searchInput" onsubmit="searchClick()">
-                  <button type="submit"><i class="fa fa-search"></i></button>
+                    <input type="text" placeholder="Search.." id="searchInput" onsubmit="searchClick()">
+                    <button type="submit"><i class="fa fa-search"></i></button>
                 </form>
                 <button><i class="fa fa-shopping-cart"></i></button>
                 <button><i class="fa fa-user"></i></button>
-              </div>
-            </div>     
-        </header>
-        <main class="main">
-          <img class="fullwidth" src="img/antique-books-on-shelves.jpg" alt="Leatherbound book on table" />
-          <div id="navCollapse">
+            </div>
+        </div>
+    </header>
+    <main class="main">
+        <img class="fullwidth" src="img/antique-books-on-shelves.jpg" alt="Leatherbound book on table" />
+        <div id="navCollapse">
             <hr />
             <hr />
             <hr />
-          </div>
-            <nav class="nav" id="navbar">
-              <ul id="navTopBar">
+        </div>
+        <nav class="nav" id="navbar">
+            <ul id="navTopBar">
                 <li><a href="index.html">Home</a></li>
                 <li><a id="nav-new-releases" href="collection.html?genre=new-releases">New Releases</a></li>
                 <li><a id="best-sellers" href="collection.html?genre=best-sellers">Best Sellers</a></li>
                 <li><a id="specials" href="collection.html?genre=specials">Specials</a></li>
                 <li><a href="about.html">Our Story</a></li>
-              </ul>
-              <ul id="navSideBar">
-                  <li>
+            </ul>
+            <ul id="navSideBar">
+                <li>
                     <a id="nav-children" href="collection.html?genre=children">Children</a>
                     <ul>
-                      <li><a id="nav-children-activity" href="collection.html?genre=children&subgenre=activity">Activity</a></li>
-                      <li><a id="nav-children-fiction" href="collection.html?genre=children&subgenre=fiction">Fiction</a></li>
-                      <li><a id="nav-children-non-fiction" href="collection.html?genre=children&subsubgenre=non-fiction">Non-Fiction</a></li>
+                        <li><a id="nav-children-activity" href="collection.html?genre=children&subgenre=activity">Activity</a></li>
+                        <li><a id="nav-children-fiction" href="collection.html?genre=children&subgenre=fiction">Fiction</a></li>
+                        <li><a id="nav-children-non-fiction" href="collection.html?genre=children&subsubgenre=non-fiction">Non-Fiction</a></li>
                     </ul>
-                  </li>
-                  <li><a id="nav-cookbooks" href="collection.html?genre=cookbooks">Cookbooks</a></li>
-                  <li><a id="nav-family-health" href="collection.html?genre=family-health">Family & Health</a></li>
-                  <li><a id="nav-fiction" href="collection.html?genre=fiction">Fiction</a></li>
-                  <li><a id="nav-non-fiction" href="collection.html?genre=non-fiction">Non-Fiction</a></li>
-                  <li><a id="nav-home-garden" href="collection.html?genre=home-garden">Home & Garden</a></li>
-                  <li><a id="nav-maoritanga" href="collection.html?genre=maoritanga">Maoritanga</a></li>
-                  <li><a id="nav-travel" href="collection.html?genre=travel">Travel</a></li>
-                  <li><a id="nav-young-adult" href="collection.html?genre=young-adult">Young Adult</a></li>
-                </ul>
-            </nav>
-            <section id="contentPane" class="collectionContent">
-              <noscript><h2>This site requires Javascript to function:<br />Please enable Javascript in your browser.</h2></noscript>
-                <p id="breadcrumbs"></p>               
-                <h1 id="collectionTitle"></h1>
-                <h2 id="searchTitle"></h2>
-                <div id="messageBox">
-                  <h2>Sorry Nothing to Show!!</h2>
-                  <p> We dont currently have anything matching that criteria. Please check back here in the future or <a href="">Contact Us</a> to let us know what we are missing</p>
-                </div>
-                <section id="collectionPanel" class="clearfix">
-                </section>
+                </li>
+                <li><a id="nav-cookbooks" href="collection.html?genre=cookbooks">Cookbooks</a></li>
+                <li><a id="nav-family-health" href="collection.html?genre=family-health">Family & Health</a></li>
+                <li><a id="nav-fiction" href="collection.html?genre=fiction">Fiction</a></li>
+                <li><a id="nav-non-fiction" href="collection.html?genre=non-fiction">Non-Fiction</a></li>
+                <li><a id="nav-home-garden" href="collection.html?genre=home-garden">Home & Garden</a></li>
+                <li><a id="nav-maoritanga" href="collection.html?genre=maoritanga">Maoritanga</a></li>
+                <li><a id="nav-travel" href="collection.html?genre=travel">Travel</a></li>
+                <li><a id="nav-young-adult" href="collection.html?genre=young-adult">Young Adult</a></li>
+            </ul>
+        </nav>
+        <section id="contentPane" class="collectionContent">
+            <noscript><h2>This site requires Javascript to function:<br />Please enable Javascript in your browser.</h2></noscript>
+            <p id="breadcrumbs"></p>
+            <h1 id="collectionTitle"></h1>
+            <h2 id="searchTitle"></h2>
+            <div id="messageBox">
+                <h2>Sorry Nothing to Show!!</h2>
+                <p> We dont currently have anything matching that criteria. Please check back here in the future or <a href="">Contact Us</a> to let us know what we are missing</p>
+            </div>
+            <section id="collectionPanel" class="clearfix">
+
             </section>
-        </main>
-        <footer class="footer">
-          <div id="footerCol1">
+        </section>
+    </main>
+    <footer class="footer">
+        <div id="footerCol1">
             <img class="paymentIcons" src="img/Essential-Minimal-Payment-Icons.jpg" alt="">
             <p>&copy; 2022 Earthly Bookworm Ltd</p>
-          </div>
-          <div id="footerCol2">
+        </div>
+        <div id="footerCol2">
             <h1>About Us</h1>
             <ul>
-              <li><a href="">Contact Us</a></li>
-              <li><a href="about.html">Our Story</a></li>
+                <li><a href="">Contact Us</a></li><li>
+                <a href="about.html">Our Story</a></li>
             </ul>
-          </div>
-          <div id="footerCol3">
+        </div>
+        <div id="footerCol3">
             <h1>Account</h1>
             <ul>
-              <li><a href="">My Account</a></li>
-              <li><a href="">Returns</a></li>
+                <li><a href="">My Account</a></li>
+                <li><a href="">Returns</a></li>
             </ul>
-          </div>
-          <div id="footerCol4">
+        </div>
+        <div id="footerCol4">
             <h1>Shopping</h1>
             <ul>
-              <li><a href="index.html">Home</a></li>
-              <li><a href="">Shipping</a></li>
-              <li><a href="">FAQ</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="">Shipping</a></li>
+                <li><a href="">FAQ</a></li>
             </ul>
-          </div>
-          <div id="footerCol5">
+        </div>
+        <div id="footerCol5">
             <h1>Privacy Policy</h1>
             <ul>
-              <li><a href="">Terms of Service</a></li>
+                <li><a href="">Terms of Service</a></li>
             </ul>
-          </div>
-        </footer>
+        </div>
+    </footer>
     </body>
 </html>
