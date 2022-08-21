@@ -14,11 +14,11 @@
         <div id="headerBar" class=".clearFix">
             <div id="headerIcons" class=".clearFix">
                 <form action="javascript:void(0);" onsubmit="searchClick()">
-                    <input type="text" placeholder="Search.." id="searchInput" onsubmit="searchClick()">
-                    <button type="submit"><i class="fa fa-search"></i></button>
+                    <label hidden for="searchInput">Search</label><input type="text" placeholder="Search.." id="searchInput" onsubmit="searchClick()">
+                    <button type="submit" aria-label="Show Search"><i class="fa fa-search"></i></button>
                 </form>
-                <button><i class="fa fa-shopping-cart"></i></button>
-                <button><i class="fa fa-user"></i></button>
+                <button aria-label="Shopping Cart"><i class="fa fa-shopping-cart"></i></button>
+                <button aria-label="Account Button"><i class="fa fa-user"></i></button>
             </div>
         </div>
     </header>
