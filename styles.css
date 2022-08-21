@@ -771,6 +771,12 @@ h1 {
 
 }
 
+/*Targets footer <h1> to make smaller*/
+.footer h1 {
+    font-size: 1.15em;
+}
+
+
 @media all and (min-width: 1400px) {
   body {
     width: 1400px;
