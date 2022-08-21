@@ -137,8 +137,8 @@ function makeCollectionItem(book) {
 function makeRatingPanel(rating) {
   let ratingPanel = '<div class="ratingPanel">'
   for(let i=1; i <= 5; i++){
-    if (rating >= i) ratingPanel += '<span class="fa fa-star checked"></span>'
-    else ratingPanel += '<span class="fa fa-star"></span>'
+    if (rating >= i) ratingPanel += '<span class="fa fa-star checkedStar"></span>'
+    else ratingPanel += '<span class="fa fa-star emptyStar"></span>'
   }
   ratingPanel += '</div>'
   return ratingPanel
