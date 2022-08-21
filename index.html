@@ -15,10 +15,10 @@
                 <div id="headerIcons" class=".clearFix">
                     <form action="javascript:void(0);" onsubmit="searchClick()">
                         <label hidden for="searchInput">Search</label><input type="text" placeholder="Search.." id="searchInput" onsubmit="searchClick()">
-                        <button type="submit"><i class="fa fa-search"></i></button>
+                        <button type="submit" aria-label="Show Search"><i class="fa fa-search"></i></button>
                 </form>
-                <button><i class="fa fa-shopping-cart"></i></button>
-                <button><i class="fa fa-user"></i></button>
+                <button aria-label="Shopping Cart"><i class="fa fa-shopping-cart"></i></button>
+                <button aria-label="Account Button"><i class="fa fa-user"></i></button>
                 </div>
             </div>
         </header>
@@ -35,7 +35,7 @@
                 <li><a id="best-sellers" href="collection.html?genre=best-sellers">Best Sellers</a></li>
                 <li><a id="specials" href="collection.html?genre=specials">Specials</a></li>
                 <li><a href="about.html">Our Story</a></li>
-                <li id="moreBooks" onclick="toggleMoreBooks()">+</li>
+                <li id="moreBooks" onclick="toggleMoreBooks() ">+</li>
             </ul>
             <ul id="navSideBar">
                 <li>
