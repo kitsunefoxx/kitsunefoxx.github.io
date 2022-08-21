@@ -295,6 +295,7 @@ h1 {
 
 .paymentIcons {
   max-width: 200px;
+  width: 200px;
 }
 
 .about {
@@ -464,6 +465,7 @@ h1 {
 #suggestedTitles .collectionItem {
   min-width: 28%;
   width: 28%;
+  max-width: 28%;
   margin-left: 4%;
   margin-bottom: 0;
   padding-bottom: 1em;
@@ -766,6 +768,7 @@ h1 {
     max-width: 16.4%;
     margin-left: 3%;
   }
+
 }
 
 @media all and (min-width: 1400px) {
