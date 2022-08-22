@@ -681,6 +681,10 @@ h1 {
     grid-row: 1 / 3;
   }
 
+  #coverImage {
+    display: none;
+  }
+
   #bookDetails {
     position: relative;
     -ms-grid-column: 2;

@@ -24,6 +24,7 @@ function loadBook(){
     let bookData = serverData.getBook(handle);
     if (bookData) { //If book found set page to display data
       let authorElement = document.getElementById('author');
+      let coverImage = document.getElementById('coverImage');
       let titleElement = document.createElement('h1');
       let priceElement = document.createElement('h2');
       titleElement.setAttribute('id', 'title');
@@ -34,8 +35,9 @@ function loadBook(){
       authorElement.parentNode.insertBefore(priceElement, authorElement);
       authorElement.parentNode.insertBefore(titleElement, authorElement);
       document.getElementById('breadcrumbs').innerHTML = '<a href="index.html">Home</a> > <a href="collection.html?genre='+ bookData.genre + '">' + makeTitle(bookData.genre) + '</a> > ' + bookData.title;
-      document.getElementById('coverImage').setAttribute('src', 'img/'+bookData.image);
-      document.getElementById('coverImage').setAttribute('alt', bookData.title);
+      coverImage.setAttribute('src', 'img/'+bookData.image);
+      coverImage.setAttribute('alt', bookData.title);
+      coverImage.style.display = 'block';
       document.getElementsByClassName('cartAdd')[0].style.display = 'inline-block';
       document.getElementById('author').innerHTML = bookData.author;
       document.getElementById('cover').innerHTML = bookData.cover;
