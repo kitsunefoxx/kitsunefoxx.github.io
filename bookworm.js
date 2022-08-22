@@ -69,7 +69,7 @@ function setSuggestedTitles(book) {
   let suggestionsPanel = document.getElementById('suggestedTitles')
   for (let i = 0; i < maxSuggestions; i++) {
     if (suggestions[i]) {
-      suggestionsPanel.innerHTML += makeCollectionItem(suggestions[i]);
+      suggestionsPanel.appendChild(makeCollectionItem(suggestions[i]));
     }
   }
 }
@@ -77,10 +77,14 @@ function setSuggestedTitles(book) {
 function loadCollection() {
   let genre = urlParams.genre;
   let searchTerms = urlParams.search;
+  let messageBox = document.getElementById('messageBox');
+  let collectionTitle = document.getElementById('collectionTitle');
+  let breadcrumbs = document.getElementById('breadcrumbs');
+  let collectionPanel = document.getElementById('collectionPanel');
   setActiveNavItem(genre);
   if (genre) { //If genre papam in url attempt to get books for genre
-    document.getElementById('breadcrumbs').innerHTML = '<a href="index.html">Home</a> > '+makeTitle(genre);
-    document.getElementById('collectionTitle').innerHTML = makeTitle(genre);
+    breadcrumbs.innerHTML = '<a href="index.html">Home</a> > '+makeTitle(genre);
+    collectionTitle.innerHTML = makeTitle(genre);
     let books;
     if (genre.toLowerCase() == 'all' || genre.toLowerCase() == 'new-releases' || genre.toLowerCase() == 'best-sellers') { 
       books = serverData.getAllBooks();
@@ -88,24 +92,27 @@ function loadCollection() {
     else books = serverData.getGenre(genre);
     if (books.length > 0) { //If book found set page to display data
       books.forEach(function(book) {
-        document.getElementById('collectionPanel').innerHTML += makeCollectionItem(book);
+        collectionPanel.appendChild(makeCollectionItem(book));
       });
     }
-    else document.getElementById('messageBox').style.display = 'block'
+    else messageBox.style.display = 'block'
   }
   else if (searchTerms) {
-    let searchTermsArr = String(searchTerms).split('-')
     let results = serverData.searchBooks(String(searchTerms).split('-'));
-    document.getElementById('breadcrumbs').innerHTML = '<a href="index.html">Home</a> > Search';
-    document.getElementById('collectionTitle').innerHTML = 'Search';
-    document.getElementById('searchTitle').innerHTML = 'Search results for: ' + String(searchTerms).replace(/-/g, ' '); //replace dashes with spaces for diaplaying search terms
+    breadcrumbs.innerHTML = '<a href="index.html">Home</a> > Search';
+    collectionTitle.innerHTML = 'Search';
+    let searchTitle = document.createElement('h2');
+    searchTitle.textContent = 'Search results for: ' + String(searchTerms).replace(/-/g, ' ');
+    collectionPanel.parentNode.insertBefore(searchTitle, messageBox);
+    // document.getElementById('searchTitle').innerHTML = '<h2>Search results for: ' + String(searchTerms).replace(/-/g, ' ') + '</h2>'; //replace dashes with spaces for diaplaying search terms
     if (results.length > 0) { //If book found set page to display data
       results.forEach(function(book) {
-        document.getElementById('collectionPanel').innerHTML += makeCollectionItem(book);
+        collectionPanel.appendChild(makeCollectionItem(book));
       });
     }
-    else document.getElementById('messageBox').style.display = 'block' 
+    else messageBox.style.display = 'block' 
   }
+  else messageBox.style.display = 'block'
 }
 
 function setActiveNavItem(id) {
@@ -120,8 +127,9 @@ function setActiveNavItem(id) {
 
 function makeCollectionItem(book) {
   let ratingPanel = makeRatingPanel(book.rating);
-  let collectionItem = '<div class="collectionItem">' +
-    '<a href="book.html?book='+book.handle+'">' +
+  let collectionItem = document.createElement('div');
+  collectionItem.classList.add('collectionItem')
+  collectionItem.innerHTML = '<a href="book.html?book='+book.handle+'">' +
       '<div>' +
         '<img src="img/'+book.image+'" alt="'+book.title+'" />' + ratingPanel +
         '<div class="bookTitle">'+book.title+'</div>' +
@@ -129,8 +137,7 @@ function makeCollectionItem(book) {
         '<div class="bookAuthor">'+book.author+'</div>' +
         '<div class="cartAddContainer"><button class="cartAdd">Add to Cart</button></div>' +
       '</div>' +
-    '</a>' +
-  '</div>';
+    '</a>';
   return collectionItem;
 }
 
