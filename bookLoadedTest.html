@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>Earthly Bookworm</title>
+  <script src="serverData.js"></script>
+  <script src="bookworm.js"></script>
+</head>
+<body>
+<header class="header">
+  <img src="img/logo_small.png" alt="Bookworm">
+  <div id="headerBar" class=".clearFix">
+      <div id="headerIcons" class=".clearFix">
+          <form action="javascript:void(0);" onsubmit="searchClick()">
+              <label hidden="" for="searchInput">Search</label><input type="text" placeholder="Search.." id="searchInput" onsubmit="searchClick()">
+              <button type="submit" aria-label="Show Search"><i class="fa fa-search"></i></button>
+          </form>
+          <button aria-label="Shopping Cart"><i class="fa fa-shopping-cart"></i></button>
+          <button aria-label="Account Button"><i class="fa fa-user"></i></button>
+      </div>
+  </div>
+</header>
+<main class="main">
+  <div id="navCollapse">
+      <hr>
+      <hr>
+      <hr>
+  </div>
+  <nav class="nav" id="navbar">
+      <ul id="navTopBar">
+          <li><a href="index.html">Home</a></li>
+          <li><a id="nav-new-releases" href="collection.html?genre=new-releases">New Releases</a></li>
+          <li><a id="best-sellers" href="collection.html?genre=best-sellers">Best Sellers</a></li>
+          <li><a id="specials" href="collection.html?genre=specials">Specials</a></li>
+          <li><a href="about.html">Our Story</a></li>
+      </ul>
+      <ul id="navSideBar">
+          <li>
+              <a id="nav-children" href="collection.html?genre=children">Children</a>
+              <ul>
+                  <li><a id="nav-children-activity" href="collection.html?genre=children&amp;subgenre=activity">Activity</a></li>
+                  <li><a id="nav-children-fiction" href="collection.html?genre=children&amp;subgenre=fiction">Fiction</a></li>
+                  <li><a id="nav-children-non-fiction" href="collection.html?genre=children&amp;subsubgenre=non-fiction">Non-Fiction</a></li>
+              </ul>
+          </li>
+          <li><a id="nav-cookbooks" href="collection.html?genre=cookbooks">Cookbooks</a></li>
+          <li><a id="nav-family-health" href="collection.html?genre=family-health">Family &amp; Health</a></li>
+          <li><a id="nav-fiction" href="collection.html?genre=fiction" class="active">Fiction</a></li>
+          <li><a id="nav-non-fiction" href="collection.html?genre=non-fiction">Non-Fiction</a></li>
+          <li><a id="nav-home-garden" href="collection.html?genre=home-garden">Home &amp; Garden</a></li>
+          <li><a id="nav-maoritanga" href="collection.html?genre=maoritanga">Maoritanga</a></li>
+          <li><a id="nav-travel" href="collection.html?genre=travel">Travel</a></li>
+          <li><a id="nav-young-adult" href="collection.html?genre=young-adult">Young Adult</a></li>
+      </ul>
+  </nav>
+  <section id="contentPane">
+      <noscript><h2>This site requires Javascript to function:<br />Please enable Javascript in your browser.</h2></noscript>
+      <p id="breadcrumbs"><a href="index.html">Home</a> &gt; <a href="collection.html?genre=fiction">Fiction</a> &gt; Where the Crawdads Sing</p>
+      <div id="messageBox">
+          <h2>Sorry Book Not Found!!</h2>
+          <p> Thats not a title we currently have in our library. Please check back here in the future or <a href="">Contact Us</a> to let us know what we are missing</p>
+      </div>
+      <section id="bookPanel">
+          <img class="displayImage" id="coverImage" alt="Where the Crawdads Sing" src="img/where-the-crawdads-sing.png" style="display: block;">
+          <section id="bookDetails" class="clearFix">
+              <h2 id="price">$24.99</h2><h1 id="title">Where the Crawdads Sing</h1><p id="author">Delia Owens</p>
+              <p id="cover">Paperback</p>
+              <p id="ISBN">ISBN: 9781472157362</p>
+              <div id="rating"><div class="ratingPanel"><span class="fa fa-star checkedStar"></span><span class="fa fa-star checkedStar"></span><span class="fa fa-star checkedStar"></span><span class="fa fa-star checkedStar"></span><span class="fa fa-star emptyStar"></span></div></div>
+          </section>
+          <section id="bookPurchase">
+              <p id="stock" style="color: green;">In Stock</p>
+              <div id="shipping" style="display: block;">
+                  <fieldset>
+                      <legend>Shipping Options</legend>
+                      <input type="radio" id="pickup" name="shipping" value="pickup">
+                      <label for="pickup">Pick Up - Free</label><br>
+                      <input type="radio" id="standard" name="shipping" value="standard" checked="checked">
+                      <label for="standard">Standard Shipping - $5 (Free for Members)</label><br>
+                      <input type="radio" id="overnight" name="shipping" value="overnight">
+                      <label for="overnight">Overnight Shipping - $15 ($10 for Members)</label><br>
+                  </fieldset>
+              </div>
+              <button class="cartAdd" style="display: inline-block;">Add to Cart</button>
+          </section>
+          <section id="description"><p>For years, rumours of the 'Marsh Girl' have haunted Barkley Cove, a quiet town on the North Carolina coast. So in late 1969, when handsome Chase Andrews is found dead, the locals immediately suspect Kya Clark, the so-called Marsh Girl. But Kya is not what they say</p></section>
+      </section>
+  </section>
+  <section id="suggestionPanel">
+      <h3>You May Also Like...</h3>
+      <div id="suggestedTitles"><div class="collectionItem"><a href="book.html?book=cobalt-blue"><div><img src="img/cobalt-blue.png" alt="Cobalt Blue"><div class="ratingPanel"><span class="fa fa-star checkedStar"></span><span class="fa fa-star checkedStar"></span><span class="fa fa-star checkedStar"></span><span class="fa fa-star checkedStar"></span><span class="fa fa-star emptyStar"></span></div><div class="bookTitle">Cobalt Blue</div><div class="bookPrice">$29.99</div><div class="bookAuthor">Matthew Reilly</div><div class="cartAddContainer"><button class="cartAdd">Add to Cart</button></div></div></a></div><div class="collectionItem"><a href="book.html?book=the-midnight-library"><div><img src="img/the-midnight-library.png" alt="The Midnight Library"><div class="ratingPanel"><span class="fa fa-star checkedStar"></span><span class="fa fa-star checkedStar"></span><span class="fa fa-star checkedStar"></span><span class="fa fa-star emptyStar"></span><span class="fa fa-star emptyStar"></span></div><div class="bookTitle">The Midnight Library</div><div class="bookPrice">$32.99</div><div class="bookAuthor">Matt Haig</div><div class="cartAddContainer"><button class="cartAdd">Add to Cart</button></div></div></a></div><div class="collectionItem"><a href="book.html?book=where-the-crawdads-sing"><div><img src="img/where-the-crawdads-sing.png" alt="Where the Crawdads Sing"><div class="ratingPanel"><span class="fa fa-star checkedStar"></span><span class="fa fa-star checkedStar"></span><span class="fa fa-star checkedStar"></span><span class="fa fa-star checkedStar"></span><span class="fa fa-star emptyStar"></span></div><div class="bookTitle">Where the Crawdads Sing</div><div class="bookPrice">$24.99</div><div class="bookAuthor">Delia Owens</div><div class="cartAddContainer"><button class="cartAdd">Add to Cart</button></div></div></a></div><div class="collectionItem"><a href="book.html?book=normal-people"><div><img src="img/normal-people.png" alt="Normal People"><div class="ratingPanel"><span class="fa fa-star checkedStar"></span><span class="fa fa-star checkedStar"></span><span class="fa fa-star checkedStar"></span><span class="fa fa-star emptyStar"></span><span class="fa fa-star emptyStar"></span></div><div class="bookTitle">Normal People</div><div class="bookPrice">$22.99</div><div class="bookAuthor">Sally Rooney</div><div class="cartAddContainer"><button class="cartAdd">Add to Cart</button></div></div></a></div><div class="collectionItem"><a href="book.html?book=the-alchemist"><div><img src="img/the-alchemist.png" alt="The Alchemist"><div class="ratingPanel"><span class="fa fa-star checkedStar"></span><span class="fa fa-star checkedStar"></span><span class="fa fa-star checkedStar"></span><span class="fa fa-star emptyStar"></span><span class="fa fa-star emptyStar"></span></div><div class="bookTitle">The Alchemist</div><div class="bookPrice">$24.99</div><div class="bookAuthor">Paulo Coelho</div><div class="cartAddContainer"><button class="cartAdd">Add to Cart</button></div></div></a></div><div class="collectionItem"><a href="book.html?book=auckland-then-and-now"><div><img src="img/auckland-then-and-now.jpg" alt="Auckland Then and Now"><div class="ratingPanel"><span class="fa fa-star checkedStar"></span><span class="fa fa-star checkedStar"></span><span class="fa fa-star checkedStar"></span><span class="fa fa-star emptyStar"></span><span class="fa fa-star emptyStar"></span></div><div class="bookTitle">Auckland Then and Now</div><div class="bookPrice">$29.99</div><div class="bookAuthor">Jenny Haworth</div><div class="cartAddContainer"><button class="cartAdd">Add to Cart</button></div></div></a></div></div>
+  </section>
+</main>
+<footer class="footer">
+  <div id="footerCol1">
+      <img class="paymentIcons" src="img/Essential-Minimal-Payment-Icons.jpg" alt="">
+      <p>© 2022 Earthly Bookworm Ltd</p>
+  </div>
+  <div id="footerCol2">
+      <h1>About Us</h1>
+      <ul>
+          <li><a href="">Contact Us</a></li>
+          <li><a href="about.html">Our Story</a></li>
+      </ul>
+  </div>
+  <div id="footerCol3">
+      <h1>Account</h1>
+      <ul>
+          <li><a href="">My Account</a></li>
+          <li><a href="">Returns</a></li>
+          </ul>
+  </div>
+  <div id="footerCol4">
+      <h1>Shopping</h1>
+      <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="">Shipping</a></li>
+          <li><a href="">FAQ</a></li>
+      </ul>
+  </div>
+  <div id="footerCol5">
+      <h1>Privacy Policy</h1>
+      <ul>
+          <li><a href="">Terms of Service</a></li>
+      </ul>
+  </div>
+</footer>
+
+</body></html>
