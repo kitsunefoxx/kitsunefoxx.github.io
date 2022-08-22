@@ -36,6 +36,14 @@ body {
   background-color: #353330;
 }
 
+fieldset {
+  border: none;
+}
+
+fieldset legend {
+  visibility: hidden;
+}
+
 #navCollapse {
     background-color: #353330;
     color: white;

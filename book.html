@@ -73,12 +73,15 @@
             <section id="bookPurchase">
                 <p id="stock"></p>
                 <div id="shipping">
-                    <input type="radio" id="pickup" name="shipping" value="pickup">
-                    <label for="pickup">Pick Up - Free</label><br>
-                    <input type="radio" id="standard" name="shipping" value="standard" checked="checked">
-                    <label for="standard">Standard Shipping - $5 (Free for Members)</label><br>
-                    <input type="radio" id="overnight" name="shipping" value="overnight">
-                    <label for="overnight">Overnight Shipping - $15 ($10 for Members)</label><br>
+                    <fieldset>
+                        <legend>Shipping Options</legend>
+                        <input type="radio" id="pickup" name="shipping" value="pickup">
+                        <label for="pickup">Pick Up - Free</label><br>
+                        <input type="radio" id="standard" name="shipping" value="standard" checked="checked">
+                        <label for="standard">Standard Shipping - $5 (Free for Members)</label><br>
+                        <input type="radio" id="overnight" name="shipping" value="overnight">
+                        <label for="overnight">Overnight Shipping - $15 ($10 for Members)</label><br>
+                    </fieldset>
                 </div>
                 <button class="cartAdd" style="display: none;">Add to Cart</button>
             </section>
