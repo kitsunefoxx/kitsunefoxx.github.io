@@ -140,7 +140,7 @@ function makeCollectionItem(book) {
   collectionItem.classList.add('collectionItem')
   collectionItem.innerHTML = '<a href="book.html?book='+book.handle+'">' +
       '<div>' +
-        '<img src="img/'+book.image+'" alt="'+book.title+'" />' + ratingPanel +
+        '<img src="img/SM_'+book.image+'" alt="'+book.title+'" />' + ratingPanel +
         '<div class="bookTitle">'+book.title+'</div>' +
         '<div class="bookPrice">$'+book.price+'</div>' +
         '<div class="bookAuthor">'+book.author+'</div>' +
