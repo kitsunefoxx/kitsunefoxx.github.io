@@ -499,7 +499,13 @@ h1 {
   margin: 0;
 }
 
-#author, #title, #ISBN, #cover {
+#author {
+  margin-top: 0.5em;
+  margin-bottom: 1em;
+  font-weight: bold;
+}
+
+#title, #ISBN, #cover {
   margin-top: 0.5em;
   margin-bottom: 0.5em;
 }

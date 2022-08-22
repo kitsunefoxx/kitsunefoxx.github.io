@@ -23,14 +23,21 @@ function loadBook(){
   if (handle) { //If book papam in url attempt to get book
     let bookData = serverData.getBook(handle);
     if (bookData) { //If book found set page to display data
+      let authorElement = document.getElementById('author');
+      let titleElement = document.createElement('h1');
+      let priceElement = document.createElement('h2');
+      titleElement.setAttribute('id', 'title');
+      priceElement.setAttribute('id', 'price');
+      titleElement.textContent = bookData.title;
+      priceElement.textContent = '$'+bookData.price;
       setActiveNavItem(bookData.genre);
+      authorElement.parentNode.insertBefore(priceElement, authorElement);
+      authorElement.parentNode.insertBefore(titleElement, authorElement);
       document.getElementById('breadcrumbs').innerHTML = '<a href="index.html">Home</a> > <a href="collection.html?genre='+ bookData.genre + '">' + makeTitle(bookData.genre) + '</a> > ' + bookData.title;
       document.getElementById('coverImage').setAttribute('src', 'img/'+bookData.image);
       document.getElementById('coverImage').setAttribute('alt', bookData.title);
       document.getElementsByClassName('cartAdd')[0].style.display = 'inline-block';
-      document.getElementById('title').innerHTML = bookData.title;
       document.getElementById('author').innerHTML = bookData.author;
-      document.getElementById('price').innerHTML = '$'+bookData.price;
       document.getElementById('cover').innerHTML = bookData.cover;
       document.getElementById('description').innerHTML = bookData.description;
       document.getElementById('ISBN').innerHTML = 'ISBN: '+bookData.ISBN;
