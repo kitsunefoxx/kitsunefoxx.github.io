@@ -13,7 +13,6 @@
     --navCollapseSize: 50px;
 }
 
-
 a {
   text-decoration: none;
 }
@@ -31,6 +30,10 @@ body {
     color: var(--colorTextDark);
     font-family: 'Josefin Sans', sans-serif;
     position: relative;
+}
+
+.darkBackground {
+  background-color: #353330;
 }
 
 #navCollapse {
@@ -666,6 +669,10 @@ h1 {
     grid-column: 1 / 3;
     -ms-grid-row: 1;
     grid-row: auto;
+  }
+
+  .fullwidth img {
+    width: 100%;
   }
 
   .homeSection {
