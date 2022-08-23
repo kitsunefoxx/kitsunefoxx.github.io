@@ -763,9 +763,9 @@ h1 {
         max-width: 20%;
         margin-left: 4%;
     }
-    }
+}
 
-    @media all and (min-width: 888px) {
+@media all and (min-width: 888px) {
     .collection-item {
         width: 28%;
         min-width: 28%;
@@ -773,9 +773,9 @@ h1 {
         margin-left: 4%;
         margin-bottom: 4%;
     }
-    }
+}
 
-    @media all and (min-width: 1025px) {
+@media all and (min-width: 1025px) {
     .collection-item {
         width: 20%;
         min-width: 20%;
