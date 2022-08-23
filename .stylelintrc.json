@@ -1,3 +1,9 @@
 {
-  "extends": "stylelint-config-standard-scss"
+  "extends": "stylelint-config-standard-scss",
+  "rules": {
+    "indentation": 4,
+    "value-no-vendor-prefix": null,
+    "property-no-vendor-prefix": null,
+    "declaration-block-no-duplicate-properties": null
+  }
 }
