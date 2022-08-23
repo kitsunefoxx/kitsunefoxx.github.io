@@ -433,8 +433,6 @@ h1 {
 
 #collection-title {
     position: absolute;
-    background-color: black;
-    background: none;
     top: 150px;
     right: 50px;
     color: white;
@@ -678,8 +676,6 @@ h1 {
         grid-template-columns: 300px auto;
         max-width: 700px;
     }
-
-    
 
     .home-section {
         margin: 1em;
