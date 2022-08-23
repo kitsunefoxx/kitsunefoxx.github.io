@@ -4,30 +4,31 @@
   --color1: #03380e;
   --color2: #353330;
   --color3: #5e3904;
-  --colorTextDark: black;
-  --colorTextLight: white;
-  --headerHeight: 150px;
-  --footerHeight: 125px;
-  --footerHeightMobile: 225px;
-  --horizontalBorderWidth: 10px;
-  --navCollapseSize: 50px;
+  --color-text-dark: black;
+  --color-text-light: white;
+  --header-height: 150px;
+  --footer-height: 125px;
+  --footer-height-mobile: 225px;
+  --horizontal-border-width: 10px;
+  --nav-collapse-size: 50px;
 }
 
 a {
   text-decoration: none;
+  
 }
 
 .collectionContent {
-  min-height: calc(100vh - var(--headerHeight) - var(--footerHeightMobile) - var(--horizontalBorderWidth) - 26vw - 4em);
+  min-height: calc(100vh - var(--header-height) - var(--footer-height-mobile) - var(--horizontal-border-width) - 26vw - 4em);
 }
 
 .main {
-  min-height: calc(100vh - var(--headerHeight) - var(--footerHeightMobile) - var(--horizontalBorderWidth) - 2em);
+  min-height: calc(100vh - var(--header-height) - var(--footer-height-mobile) - var(--horizontal-border-width) - 2em);
 }
 
 body {
   margin: 0;
-  color: var(--colorTextDark);
+  color: var(--color-text-dark);
   font-family: "Josefin Sans", sans-serif;
   position: relative;
 }
@@ -51,12 +52,12 @@ fieldset legend {
   height: 50px;
   top: 100px;
   background-color: var(--color2);
-  color: var(--colorTextLight);
-  width: var(--navCollapseSize);
-  height: var(--navCollapseSize);
+  color: var(--color-text-light);
+  width: var(--nav-collapse-size);
+  height: var(--nav-collapse-size);
   display: inline-block;
   position: absolute;
-  top: calc(var(--headerHeight) - var(--navCollapseSize));
+  top: calc(var(--header-height) - var(--nav-collapse-size));
 }
 
 #navCollapse hr {
@@ -64,22 +65,22 @@ fieldset legend {
   border-radius: 7px;
   background-color: white;
   margin: 7px;
-  height: calc(var(--navCollapseSize) / 7);
-  border-radius: calc(var(--navCollapseSize) / 7);
+  height: calc(var(--nav-collapse-size) / 7);
+  border-radius: calc(var(--nav-collapse-size) / 7);
   border: none;
-  background-color: var(--colorTextLight);
-  margin: calc(var(--navCollapseSize) / 7);
+  background-color: var(--color-text-light);
+  margin: calc(var(--nav-collapse-size) / 7);
 }
 
 .nav {
   display: none;
   background-color: #353330;
   background-color: var(--color2);
-  color: var(--colorTextLight);
+  color: var(--color-text-light);
   padding: 0 1em 1em;
   position: absolute;
   width: 100%;
-  top: var(--headerHeight);
+  top: var(--header-height);
   font-size: larger;
   z-index: 10;
 }
@@ -101,7 +102,7 @@ fieldset legend {
 .nav a,
 .nav li {
   color: white;
-  color: var(--colorTextLight);
+  color: var(--color-text-light);
   text-decoration: none;
 }
 
@@ -121,9 +122,9 @@ fieldset legend {
   background-color: #03380e;
   background-color: var(--color1);
   color: white;
-  color: var(--colorTextLight);
+  color: var(--color-text-light);
   height: 150px;
-  height: var(--headerHeight);
+  height: var(--header-height);
   overflow: hidden;
 }
 
@@ -134,7 +135,7 @@ h1 {
 .header img {
   display: inline;
   max-height: 100px;
-  max-height: calc(var(--headerHeight) - var(--navCollapseSize));
+  max-height: calc(var(--header-height) - var(--nav-collapse-size));
   max-width: 100vw;
 }
 
@@ -142,7 +143,7 @@ h1 {
   background-color: #5e3904;
   background-color: var(--color3);
   height: 50px;
-  height: var(--navCollapseSize);
+  height: var(--nav-collapse-size);
   z-index: 20;
 }
 
@@ -155,13 +156,13 @@ h1 {
 #headerIcons button {
   height: 50px;
   width: 50px;
-  height: var(--navCollapseSize);
-  width: var(--navCollapseSize);
+  height: var(--nav-collapse-size);
+  width: var(--nav-collapse-size);
   font-size: 1.5em;
   font-weight: 600;
   color: white;
   background-color: #5e3904;
-  color: var(--colorTextLight);
+  color: var(--color-text-light);
   background-color: var(--color3);
   margin: 0;
   border: none;
@@ -169,7 +170,7 @@ h1 {
 
 #headerIcons input {
   height: 36px;
-  height: calc(var(--navCollapseSize) - 14px);
+  height: calc(var(--nav-collapse-size) - 14px);
   margin: 5px 0;
   float: left;
   border: none;
@@ -215,7 +216,7 @@ h1 {
   background-color: #353330;
   background-color: var(--color2);
   color: white;
-  color: var(--colorTextLight);
+  color: var(--color-text-light);
   padding: 0.2em;
   text-decoration: none;
 }
@@ -235,7 +236,7 @@ h1 {
   width: 80%;
   display: block;
   border: 2px solid black;
-  border: 2px solid var(--colorTextDark);
+  border: 2px solid var(--color-text-dark);
   border-radius: 10px;
   margin-left: auto;
   margin-right: auto;
@@ -244,24 +245,24 @@ h1 {
 .footer {
   margin-top: 1em;
   padding-left: 0.5em;
-  height: var(--footerHeightMobile);
+  height: var(--footer-height-mobile);
   background-color: #03380e;
   color: white;
   border-top: 10px solid #5e3904;
   background-color: var(--color1);
-  border-top: var(--horizontalBorderWidth) solid var(--color3);
-  color: var(--colorTextLight);
-  display: grid;
+  border-top: var(--horizontal-border-width) solid var(--color3);
+  color: var(--color-text-light);
+  -ms-display: grid;
   display: grid;
   -ms-grid-columns: 2fr 1fr 1fr;
   grid-template-columns: 2fr 1fr 1fr;
 }
 
 #footerCol1 {
-  grid-column: 1;
+  -ms-grid-column: 1;
   grid-column: 1;
   -ms-grid-row-span: 2;
-  grid-row: 1;
+  -ms-grid-row: 1;
   grid-row: 1 / 3;
   display: flex;
   flex-direction: column;
@@ -269,22 +270,22 @@ h1 {
 }
 
 #footerCol2 {
-  grid-column: 2;
+    -ms-grid-column: 2;
   grid-column: 2;
 }
 
 #footerCol3 {
-  grid-column: 3;
+    -ms-grid-column: 3;
   grid-column: 3;
 }
 
 #footerCol4 {
-  grid-column: 2;
+    -ms-grid-column: 2;
   grid-column: 2;
 }
 
 #footerCol5 {
-  grid-column: 3;
+    -ms-grid-column: 3;
   grid-column: 3;
 }
 
@@ -295,7 +296,7 @@ h1 {
 
 .footer a {
   color: white;
-  color: var(--colorTextLight);
+  color: var(--color-text-light);
   text-decoration: none;
   margin-top: 0.4em;
 }
@@ -333,7 +334,7 @@ h1 {
   width: 70%;
   margin-left: 15%;
   color: white;
-  color: var(--colorTextLight);
+  color: var(--color-text-light);
   border: none;
   border-radius: 0.5em;
   font-size: larger;
@@ -345,7 +346,7 @@ h1 {
   margin-bottom: 4%;
   border: 1px solid black;
   color: black;
-  color: var(--colorTextDark);
+  color: var(--color-text-dark);
   padding-bottom: 0.5em;
   position: relative;
 }
@@ -375,7 +376,7 @@ h1 {
 
 .collectionItem a {
   color: black;
-  color: var(--colorTextDark);
+  color: var(--color-text-dark);
   text-decoration: none;
 }
 
@@ -438,9 +439,9 @@ h1 {
   top: 150px;
   right: 50px;
   color: white;
-  top: var(--headerHeight);
-  right: var(--navCollapseSize);
-  color: var(--colorTextLight);
+  top: var(--header-height);
+  right: var(--nav-collapse-size);
+  color: var(--color-text-light);
   font-size: 3em;
   text-shadow: -3px 0 black, 0 3px black, 3px 0 black, 0 -3px black;
 }
@@ -456,7 +457,7 @@ h1 {
 #suggestionPanel {
   width: 100%;
   margin: 1em 0;
-  grid-row: 3;
+  -ms-grid-row: 3;
   grid-row: auto;
   -ms-grid-column-span: 2;
   grid-column: 1 / 3;
@@ -536,7 +537,7 @@ h1 {
 
 @media all and (min-width: 768px) {
   .collectionContent {
-    min-height: calc(100vh - var(--headerHeight) - var(--footerHeight) - var(--horizontalBorderWidth) - 26vw - 5em);
+    min-height: calc(100vh - var(--header-height) - var(--footer-height) - var(--horizontal-border-width) - 26vw - 5em);
   }
 
   #navCollapse {
@@ -548,24 +549,22 @@ h1 {
   }
 
   .main {
-    min-height: calc(100vh - var(--headerHeight) - var(--footerHeight) - var(--horizontalBorderWidth) - 2em);
-    display: grid;
+    min-height: calc(100vh - var(--header-height) - var(--footer-height) - var(--horizontal-border-width) - 2em);
+    -ms-display: grid;
     display: grid;
     -ms-grid-columns: 200px auto;
     grid-template-columns: 200px auto;
   }
 
-
-
   .nav {
     display: inline-block;
     position: inherit;
     width: inherit;
+    -ms-grid-column: 1;
     grid-column: 1;
-    grid-column: 1;
-    grid-row: 2;
+    -ms-grid-row: 2;
     grid-row: auto;
-    color: var(--colorTextDark);
+    color: var(--color-text-dark);
     background-color: white;
     border-right: 5px solid var(--color2);
   }
@@ -573,7 +572,7 @@ h1 {
   #navSideBar a,
   #navSideBar li {
     color: black;
-    color: var(--colorTextDark);
+    color: var(--color-text-dark);
   }
 
   #navTopBar {
@@ -583,8 +582,8 @@ h1 {
     left: 0;
     top: 100px;
     height: 50px;
-    top: calc(var(--headerHeight) - var(--navCollapseSize));
-    height: var(--navCollapseSize);
+    top: calc(var(--header-height) - var(--nav-collapse-size));
+    height: var(--nav-collapse-size);
   }
 
   #navTopBar li {
@@ -608,8 +607,8 @@ h1 {
     position: absolute;
     top: 100px;
     height: 50px;
-    top: calc(var(--headerHeight) - var(--navCollapseSize));
-    height: var(--navCollapseSize);
+    top: calc(var(--header-height) - var(--nav-collapse-size));
+    height: var(--nav-collapse-size);
   }
 
   .homeMain #navTopBar {
@@ -634,7 +633,7 @@ h1 {
   .homeMain #navSideBar a,
   .homeMain #navSideBar li {
     color: white;
-    color: var(--colorTextLight);
+    color: var(--color-text-light);
   }
 
   .homeMain #moreBooks {
@@ -651,14 +650,14 @@ h1 {
   }
 
   #contentPane {
+    -ms-grid-column: 2;
     grid-column: 2;
-    grid-column: 2;
-    grid-row: 2;
+    -ms-grid-row: 2;
     grid-row: auto;
   }
 
   #bookPanel {
-    display: grid;
+    -ms-display: grid;
     display: grid;
     -ms-grid-columns: 300px auto;
     grid-template-columns: 300px auto;
@@ -670,10 +669,10 @@ h1 {
     width: calc(100% - 2em);
     display: block;
     margin: 0 1em 1em;
-    grid-column: 1;
     -ms-grid-column-span: 2;
+    -ms-grid-column: 1;
     grid-column: 1 / 3;
-    grid-row: 1;
+    -ms-grid-row: 1;
     grid-row: auto;
   }
 
@@ -688,7 +687,7 @@ h1 {
   }
 
   .displayImage {
-    grid-column: 1;
+    -ms-grid-column: 1;
     grid-column: 1;
     -ms-grid-row-span: 2;
     grid-row: 1 / 3;
@@ -700,29 +699,27 @@ h1 {
 
   #bookDetails {
     position: relative;
+    -ms-grid-column: 2;
     grid-column: 2;
-    grid-column: 2;
-    grid-row: 1;
+    -ms-grid-row: 1;
     grid-row: 1;
   }
 
   #bookPurchase {
+    -ms-grid-column: 2;
     grid-column: 2;
-    grid-column: 2;
-    grid-row: 2;
+    -ms-grid-row: 2;
     grid-row: 2;
   }
 
   #description {
     padding: 1em;
     -ms-grid-column-span: 2;
-    grid-column: 1;
+    -ms-grid-column: 1;
     grid-column: 1 / 3;
-    grid-row: 3;
+    -ms-grid-row: 3;
     grid-row: 3;
   }
-
-
 
   #bookPanel h1 {
     margin: 0;
@@ -738,24 +735,24 @@ h1 {
   }
 
   .footer {
-    height: var(--footerHeight);
+    height: var(--footer-height);
     -ms-grid-columns: 2fr 1fr 1fr 1fr 1fr;
     grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
   }
 
   #footerCol1 {
     -ms-grid-row-span: 1;
-    grid-row: 1;
+    -ms-grid-row: 1;
     grid-row: 1;
   }
 
   #footerCol4 {
-    grid-column: 4;
+    -ms-grid-column: 4;
     grid-column: 4;
   }
 
   #footerCol5 {
-    grid-column: 5;
+    -ms-grid-column: 5;
     grid-column: 5;
   }
 
