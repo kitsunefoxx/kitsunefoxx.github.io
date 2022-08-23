@@ -24,7 +24,7 @@ function loadBook () {
         const bookData = server.getBook(handle);
         if (bookData) { // If book found set page to display data
             const authorElement = document.getElementById('author');
-            const coverImage = document.getElementById('coverImage');
+            const coverImage = document.getElementById('cover-image');
             const titleElement = document.createElement('h1');
             const priceElement = document.createElement('h2');
             titleElement.setAttribute('id', 'title');
@@ -38,11 +38,11 @@ function loadBook () {
             coverImage.setAttribute('src', 'img/' + bookData.image);
             coverImage.setAttribute('alt', bookData.title);
             coverImage.style.display = 'block';
-            document.getElementsByClassName('cartAdd')[0].style.display = 'inline-block';
+            document.getElementsByClassName('cart-add')[0].style.display = 'inline-block';
             document.getElementById('author').innerHTML = bookData.author;
             document.getElementById('cover').innerHTML = bookData.cover;
             document.getElementById('description').innerHTML = bookData.description;
-            document.getElementById('ISBN').innerHTML = 'ISBN: ' + bookData.ISBN;
+            document.getElementById('isbn').innerHTML = 'ISBN: ' + bookData.ISBN;
             document.getElementById('rating').innerHTML = makeRatingPanel(bookData.rating);
             setSuggestedTitles(bookData);
             const stockValue = bookData.stock;
@@ -56,14 +56,14 @@ function loadBook () {
                 document.getElementById('shipping').style.display = 'block';
             } else {
                 stockElement.style.color = 'red';
-                document.getElementsByClassName('cartAdd')[0].style.display = 'none';
+                document.getElementsByClassName('cart-add')[0].style.display = 'none';
             }
         } else {
-            document.getElementById('messageBox').style.display = 'block';
+            document.getElementById('message-box').style.display = 'block';
             setSuggestedTitles();
         }
     } else {
-        document.getElementById('messageBox').style.display = 'block';
+        document.getElementById('message-box').style.display = 'block';
         setSuggestedTitles();
     }
 }
@@ -71,7 +71,7 @@ function loadBook () {
 function setSuggestedTitles (book) {
     const suggestions = server.getAllBooks();
     const maxSuggestions = 6;
-    const suggestionsPanel = document.getElementById('suggestedTitles');
+    const suggestionsPanel = document.getElementById('suggested-titles');
     for (let i = 0; i < maxSuggestions; i++) {
         if (suggestions[i]) {
             suggestionsPanel.appendChild(makeCollectionItem(suggestions[i]));
@@ -82,10 +82,10 @@ function setSuggestedTitles (book) {
 function loadCollection () {
     const genre = urlParams.genre;
     const searchTerms = urlParams.search;
-    const messageBox = document.getElementById('messageBox');
-    const collectionTitle = document.getElementById('collectionTitle');
+    const messageBox = document.getElementById('message-box');
+    const collectionTitle = document.getElementById('collection-title');
     const breadcrumbs = document.getElementById('breadcrumbs');
-    const collectionPanel = document.getElementById('collectionPanel');
+    const collectionPanel = document.getElementById('collection-panel');
     setActiveNavItem(genre);
     if (genre) { // If genre papam in url attempt to get books for genre
         breadcrumbs.innerHTML = '<a href="index.html">Home</a> > ' + makeTitle(genre);
@@ -127,24 +127,24 @@ function setActiveNavItem (id) {
 function makeCollectionItem (book) {
     const ratingPanel = makeRatingPanel(book.rating);
     const collectionItem = document.createElement('div');
-    collectionItem.classList.add('collectionItem');
+    collectionItem.classList.add('collection-item');
     collectionItem.innerHTML = '<a href="book.html?book=' + book.handle + '">' +
       '<div>' +
         '<img src="img/SM_' + book.image + '" alt="' + book.title + '" />' + ratingPanel +
-        '<div class="bookTitle">' + book.title + '</div>' +
-        '<div class="bookPrice">$' + book.price + '</div>' +
-        '<div class="bookAuthor">' + book.author + '</div>' +
-        '<div class="cartAddContainer"><button class="cartAdd">Add to Cart</button></div>' +
+        '<div class="book-title">' + book.title + '</div>' +
+        '<div class="book-price">$' + book.price + '</div>' +
+        '<div class="book-author">' + book.author + '</div>' +
+        '<div class="cart-add-container"><button class="cart-add">Add to Cart</button></div>' +
       '</div>' +
     '</a>';
     return collectionItem;
 }
 
 function makeRatingPanel (rating) {
-    let ratingPanel = '<div class="ratingPanel">';
+    let ratingPanel = '<div class="rating-panel">';
     for (let i = 1; i <= 5; i++) {
-        if (rating >= i) ratingPanel += '<span class="fa fa-star checkedStar"></span>';
-        else ratingPanel += '<span class="fa fa-star emptyStar"></span>';
+        if (rating >= i) ratingPanel += '<span class="fa fa-star checked-star"></span>';
+        else ratingPanel += '<span class="fa fa-star empty-star"></span>';
     }
     ratingPanel += '</div>';
     return ratingPanel;
@@ -158,8 +158,8 @@ function makeTitle (str) {
 }
 
 function addListeners () {
-    if (doc === 'product.html') document.getElementById('cartAdd').addEventListener('click', addToCart);
-    document.getElementById('navCollapse').addEventListener('click', toggleNavDisplay);
+    if (doc === 'product.html') document.getElementById('cart-add').addEventListener('click', addToCart);
+    document.getElementById('nav-collapse').addEventListener('click', toggleNavDisplay);
 }
 
 function addToCart () {
@@ -173,8 +173,8 @@ function toggleNavDisplay () {
 }
 
 function toggleMoreBooks () {
-    const sideBar = document.getElementById('navSideBar');
-    const moreBooks = document.getElementById('moreBooks');
+    const sideBar = document.getElementById('nav-side-bar');
+    const moreBooks = document.getElementById('more-books');
     if (sideBar.style.display) {
         sideBar.style.display = null;
         moreBooks.innerHTML = '+';
@@ -185,7 +185,7 @@ function toggleMoreBooks () {
 }
 
 function searchClick () {
-    const inputBox = document.getElementById('searchInput');
+    const inputBox = document.getElementById('search-input');
     if (inputBox.style.display) {
         if (inputBox.value) {
             window.location.href = 'collection.html?search=' + inputBox.value.trim().replace(/\s+/g, '-').replace(/-{2,}/g, '-'); // replace any spaces with dash and replace any multiple dashes with single dash

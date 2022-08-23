@@ -17,7 +17,7 @@ a {
     text-decoration: none;
 }
 
-.collectionContent {
+.collection-content {
     min-height: calc(100vh - var(--header-height) - var(--footer-height-mobile) - var(--horizontal-border-width) - 26vw - 4em);
 }
 
@@ -32,7 +32,7 @@ body {
     position: relative;
 }
 
-.darkBackground {
+.dark-background {
     background-color: #353330;
 }
 
@@ -44,7 +44,7 @@ fieldset legend {
     visibility: hidden;
 }
 
-#navCollapse {
+#nav-collapse {
     background-color: #353330;
     color: white;
     width: 50px;
@@ -59,7 +59,7 @@ fieldset legend {
     top: calc(var(--header-height) - var(--nav-collapse-size));
 }
 
-#navCollapse hr {
+#nav-collapse hr {
     height: 7px;
     border-radius: 7px;
     background-color: white;
@@ -113,7 +113,7 @@ fieldset legend {
     opacity: 0.5;
 }
 
-.homeMain #moreBooks {
+.home-main #more-books {
     display: none;
 }
 
@@ -138,7 +138,7 @@ h1 {
     max-width: 100vw;
 }
 
-#headerBar {
+#header-bar {
     background-color: #5e3904;
     background-color: var(--color3);
     height: 50px;
@@ -146,13 +146,13 @@ h1 {
     z-index: 20;
 }
 
-#headerIcons {
+#header-icons {
     z-index: 20;
     position: relative;
     float: right;
 }
 
-#headerIcons button {
+#header-icons button {
     height: 50px;
     width: 50px;
     height: var(--nav-collapse-size);
@@ -167,7 +167,7 @@ h1 {
     border: none;
 }
 
-#headerIcons input {
+#header-icons input {
     height: 36px;
     height: calc(var(--nav-collapse-size) - 14px);
     margin: 5px 0;
@@ -187,7 +187,7 @@ h1 {
     padding: 0;
 }
 
-.homeSectionContainer {
+.home-section-container {
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
@@ -195,7 +195,7 @@ h1 {
     padding-right: 1em;
 }
 
-.homeSection {
+.home-section {
     max-width: 90%;
     flex: 1 0 70%;
     margin: 1em;
@@ -206,7 +206,7 @@ h1 {
     border-radius: 1em;
 }
 
-.homeSection h2 {
+.home-section h2 {
     display: block;
     text-align: center;
     font-size: 200%;
@@ -220,18 +220,18 @@ h1 {
     text-decoration: none;
 }
 
-.homeSection img {
+.home-section img {
     width: 100%;
     margin-bottom: -4px;
 }
 
-.homeSection .imagePane {
+.home-section .image-pane {
     background-size: cover;
     width: 100%;
     padding-top: 60%;
 }
 
-.displayImage {
+.display-image {
     width: 80%;
     display: block;
     border: 2px solid black;
@@ -257,7 +257,7 @@ h1 {
     grid-template-columns: 2fr 1fr 1fr;
 }
 
-#footerCol1 {
+#footer-col1 {
     -ms-grid-column: 1;
     grid-column: 1;
     -ms-grid-row-span: 2;
@@ -268,22 +268,22 @@ h1 {
     justify-content: flex-end;
 }
 
-#footerCol2 {
+#footer-col2 {
     -ms-grid-column: 2;
     grid-column: 2;
 }
 
-#footerCol3 {
+#footer-col3 {
     -ms-grid-column: 3;
     grid-column: 3;
 }
 
-#footerCol4 {
+#footer-col4 {
     -ms-grid-column: 2;
     grid-column: 2;
 }
 
-#footerCol5 {
+#footer-col5 {
     -ms-grid-column: 3;
     grid-column: 3;
 }
@@ -300,7 +300,7 @@ h1 {
     margin-top: 0.4em;
 }
 
-.paymentIcons {
+.payment-icons {
     max-width: 200px;
     width: 200px;
 }
@@ -322,11 +322,11 @@ h1 {
     text-decoration: none;
 }
 
-#productDetails {
+#product-details {
     text-align: left;
 }
 
-.cartAdd {
+.cart-add {
     background-color: #5e3904;
     background-color: var(--color3);
     padding: 0.5em;
@@ -339,7 +339,7 @@ h1 {
     font-size: larger;
 }
 
-.collectionItem {
+.collection-item {
     width: 44%;
     margin-left: 4%;
     margin-bottom: 4%;
@@ -350,21 +350,21 @@ h1 {
     position: relative;
 }
 
-.collectionItem img {
+.collection-item img {
     width: 100%;
 }
 
-.checkedStar {
+.checked-star {
     color: yellow;
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
-.emptyStar {
+.empty-star {
     color: white;
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
-.collectionItem .ratingPanel {
+.collection-item .rating-panel {
     width: 100;
     display: flex;
     justify-content: center;
@@ -373,13 +373,13 @@ h1 {
     font-size: 1.5em;
 }
 
-.collectionItem a {
+.collection-item a {
     color: black;
     color: var(--color-text-dark);
     text-decoration: none;
 }
 
-.collectionItem .bookTitle {
+.collection-item .book-title {
     width: 65%;
     text-align: left;
     display: inline-block;
@@ -387,7 +387,7 @@ h1 {
     padding-left: 1%;
 }
 
-.collectionItem .bookPrice {
+.collection-item .book-price {
     width: 33%;
     text-align: right;
     font-size: large;
@@ -396,7 +396,7 @@ h1 {
     padding-right: 1%;
 }
 
-.collectionItem .bookAuthor {
+.collection-item .book-author {
     width: 100%;
     text-align: left;
     font-size: smaller;
@@ -405,12 +405,12 @@ h1 {
     padding-left: 1%;
 }
 
-.collectionItem .cartAdd {
+.collection-item .cart-add {
     text-align: center;
     padding: 0.5em;
 }
 
-.collectionItem .cartAddContainer {
+.collection-item .cart-add-container {
     width: 100%;
     position: absolute;
     bottom: 0.5em;
@@ -425,13 +425,13 @@ h1 {
     clear: both;
 }
 
-#collectionPanel {
+#collection-panel {
     display: flex;
     flex-flow: row wrap;
     justify-content: flex-start;
 }
 
-#collectionTitle {
+#collection-title {
     position: absolute;
     background-color: black;
     background: none;
@@ -445,7 +445,7 @@ h1 {
     text-shadow: -3px 0 black, 0 3px black, 3px 0 black, 0 -3px black;
 }
 
-#suggestedTitles {
+#suggested-titles {
     margin-top: 1em;
     display: flex;
     justify-content: flex-start;
@@ -453,7 +453,7 @@ h1 {
     overflow: hidden;
 }
 
-#suggestionPanel {
+#suggestion-panel {
     width: 100%;
     margin: 1em 0;
     -ms-grid-row: 3;
@@ -462,14 +462,14 @@ h1 {
     grid-column: 1 / 3;
 }
 
-#suggestionPanel h3 {
+#suggestion-panel h3 {
     width: 100%;
     text-align: center;
     margin-top: 0;
     margin-bottom: 0.5em;
 }
 
-#suggestedTitles .collectionItem {
+#suggested-titles .collection-item {
     min-width: 28%;
     width: 28%;
     max-width: 28%;
@@ -478,13 +478,13 @@ h1 {
     padding-bottom: 1em;
 }
 
-#suggestedTitles .collectionItem .cartAddContainer,
-#suggestedTitles .collectionItem .bookTitle,
-#suggestedTitles .collectionItem .bookAuthor {
+#suggested-titles .collection-item .cart-add-container,
+#suggested-titles .collection-item .book-title,
+#suggested-titles .collection-item .book-author {
     display: none;
 }
 
-#suggestedTitles .collectionItem .ratingPanel {
+#suggested-titles .collection-item .rating-panel {
     position: absolute;
     bottom: 0;
     margin: 0;
@@ -492,7 +492,7 @@ h1 {
     height: 1em;
 }
 
-#suggestedTitles .collectionItem .bookPrice {
+#suggested-titles .collection-item .book-price {
     position: absolute;
     bottom: 0;
     right: 0;
@@ -514,7 +514,7 @@ h1 {
 }
 
 #title,
-#ISBN,
+#isbn,
 #cover {
     margin-top: 0.5em;
     margin-bottom: 0.5em;
@@ -528,18 +528,18 @@ h1 {
     margin-bottom: 1em;
 }
 
-#messageBox {
+#message-box {
     display: none;
     max-width: 400px;
     margin: 1em;
 }
 
 @media all and (min-width: 768px) {
-    .collectionContent {
+    .collection-content {
         min-height: calc(100vh - var(--header-height) - var(--footer-height) - var(--horizontal-border-width) - 26vw - 5em);
     }
 
-    #navCollapse {
+    #nav-collapse {
         display: none;
     }
 
@@ -568,13 +568,13 @@ h1 {
         border-right: 5px solid var(--color2);
     }
 
-    #navSideBar a,
-    #navSideBar li {
+    #nav-side-bar a,
+    #nav-side-bar li {
         color: black;
         color: var(--color-text-dark);
     }
 
-    #navTopBar {
+    #nav-top-bar {
         position: absolute;
         visibility: visible;
         margin: 0;
@@ -585,7 +585,7 @@ h1 {
         height: var(--nav-collapse-size);
     }
 
-    #navTopBar li {
+    #nav-top-bar li {
         float: left;
         background-color: #5e3904;
         background-color: var(--color3);
@@ -593,11 +593,11 @@ h1 {
         margin: 8px;
     }
 
-    .homeMain {
+    .home-main {
         display: block;
     }
 
-    .homeMain .nav {
+    .home-main .nav {
         display: inline-block;
         background: none;
         border: none;
@@ -610,13 +610,13 @@ h1 {
         height: var(--nav-collapse-size);
     }
 
-    .homeMain #navTopBar {
+    .home-main #nav-top-bar {
         position: relative;
         display: block;
         top: 0;
     }
 
-    .homeMain #navSideBar {
+    .home-main #nav-side-bar {
         background-color: #353330;
         background-color: var(--color2);
         display: block;
@@ -629,38 +629,18 @@ h1 {
         display: none;
     }
 
-    .homeMain #navSideBar a,
-    .homeMain #navSideBar li {
+    .home-main #nav-side-bar a,
+    .home-main #nav-side-bar li {
         color: white;
         color: var(--color-text-light);
     }
 
-    .homeMain #moreBooks {
+    .home-main #more-books {
         display: inherit;
         font-size: 2em;
         margin: 0;
         padding: 0;
         margin-top: 5px;
-    }
-
-    .homeMain .fullwidth {
-        width: 100%;
-        margin: -1em 0 1em;
-    }
-
-    #contentPane {
-        -ms-grid-column: 2;
-        grid-column: 2;
-        -ms-grid-row: 2;
-        grid-row: auto;
-    }
-
-    #bookPanel {
-        display: -ms-grid;
-        display: grid;
-        -ms-grid-columns: 300px auto;
-        grid-template-columns: 300px auto;
-        max-width: 700px;
     }
 
     .fullwidth {
@@ -679,24 +659,46 @@ h1 {
         width: 100%;
     }
 
-    .homeSection {
+    .home-main .fullwidth {
+        width: 100%;
+        margin: -1em 0 1em;
+    }
+
+    #content-pane {
+        -ms-grid-column: 2;
+        grid-column: 2;
+        -ms-grid-row: 2;
+        grid-row: auto;
+    }
+
+    #book-panel {
+        display: -ms-grid;
+        display: grid;
+        -ms-grid-columns: 300px auto;
+        grid-template-columns: 300px auto;
+        max-width: 700px;
+    }
+
+    
+
+    .home-section {
         margin: 1em;
         flex: 1 0 35%;
         position: relative;
     }
 
-    .displayImage {
+    .display-image {
         -ms-grid-column: 1;
         grid-column: 1;
         -ms-grid-row-span: 2;
         grid-row: 1 / 3;
     }
 
-    #coverImage {
+    #cover-image {
         display: none;
     }
 
-    #bookDetails {
+    #book-details {
         position: relative;
         -ms-grid-column: 2;
         grid-column: 2;
@@ -704,7 +706,7 @@ h1 {
         grid-row: 1;
     }
 
-    #bookPurchase {
+    #book-purchase {
         -ms-grid-column: 2;
         grid-column: 2;
         -ms-grid-row: 2;
@@ -720,16 +722,16 @@ h1 {
         grid-row: 3;
     }
 
-    #bookPanel h1 {
+    #book-panel h1 {
         margin: 0;
     }
 
-    #collectionTitle {
+    #collection-title {
         font-size: 4em;
         text-shadow: -4px 0 black, 0 4px black, 4px 0 black, 0 -4px black;
     }
 
-    #collectionPanel {
+    #collection-panel {
         justify-content: flex-start;
     }
 
@@ -739,23 +741,23 @@ h1 {
         grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
     }
 
-    #footerCol1 {
+    #footer-col1 {
         -ms-grid-row-span: 1;
         -ms-grid-row: 1;
         grid-row: 1;
     }
 
-    #footerCol4 {
+    #footer-col4 {
         -ms-grid-column: 4;
         grid-column: 4;
     }
 
-    #footerCol5 {
+    #footer-col5 {
         -ms-grid-column: 5;
         grid-column: 5;
     }
 
-    #suggestedTitles .collectionItem {
+    #suggested-titles .collection-item {
         min-width: 20%;
         width: 20%;
         max-width: 20%;
@@ -764,7 +766,7 @@ h1 {
     }
 
     @media all and (min-width: 888px) {
-    .collectionItem {
+    .collection-item {
         width: 28%;
         min-width: 28%;
         max-width: 28%;
@@ -774,7 +776,7 @@ h1 {
     }
 
     @media all and (min-width: 1025px) {
-    .collectionItem {
+    .collection-item {
         width: 20%;
         min-width: 20%;
         max-width: 20%;
@@ -782,7 +784,7 @@ h1 {
         margin-bottom: 4%;
     }
 
-    #suggestedTitles .collectionItem {
+    #suggested-titles .collection-item {
         min-width: 16.4%;
         width: 16.4%;
         max-width: 16.4%;
