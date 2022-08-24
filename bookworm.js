@@ -97,7 +97,7 @@ function loadCollection () {
         let books;
         if (genre.toLowerCase() === 'all' || genre.toLowerCase() === 'new-releases' || genre.toLowerCase() === 'best-sellers') {
             books = server.getAllBooks();
-        } else books = server.getGenre(genre);
+        } else books = server.getGenre(genre, subgenre);
         if (books.length > 0) { // If book found set page to display data
             books.forEach(function (book) {
                 collectionPanel.appendChild(makeCollectionItem(book));

@@ -13,8 +13,15 @@ let serverData;
         return sampleBooks;
     }
 
-    const getGenre = function (genre) {
-        return sampleBooks.filter(function (book) { return (book.genre.toLowerCase() === genre.toLowerCase()); });
+    const getGenre = function (genre, subgenre) {
+        let results = sampleBooks.filter(function (book) { return (book.genre.toLowerCase() === genre.toLowerCase()); });
+        if (subgenre) {
+            results = sampleBooks.filter(function (book) {
+                if (book.subgenre) return (book.subgenre.toLowerCase() === subgenre.toLowerCase());
+                else return false;
+            });
+        }
+        return results
     }
 
     // takes a string array of search terms and returns any book that matches all search terms
