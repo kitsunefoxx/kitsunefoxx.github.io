@@ -92,9 +92,13 @@ function loadCollection () {
     const collectionPanel = document.getElementById('collection-panel');
     setActiveNavItem(genre, subgenre);
     if (genre) { // If genre papam in url attempt to get books for genre
-        if (subgenre) breadcrumbs.innerHTML = '<a href="index.html">Home</a> > <a href="collection.html?genre=' + genre + '">' + makeTitle(genre) + '</a> > ' + makeTitle(subgenre);
-        else breadcrumbs.innerHTML = '<a href="index.html">Home</a> > ' + makeTitle(genre);
-        collectionTitle.innerHTML = makeTitle(genre);
+        if (subgenre) {
+            breadcrumbs.innerHTML = '<a href="index.html">Home</a> > <a href="collection.html?genre=' + genre + '">' + makeTitle(genre) + '</a> > ' + makeTitle(subgenre);
+            collectionTitle.innerHTML = makeTitle(genre) + ' - ' + makeTitle(subgenre);
+        } else {
+            breadcrumbs.innerHTML = '<a href="index.html">Home</a> > ' + makeTitle(genre);
+            collectionTitle.innerHTML = makeTitle(genre);
+        }
         let books;
         if (genre.toLowerCase() === 'all' || genre.toLowerCase() === 'new-releases' || genre.toLowerCase() === 'best-sellers') {
             books = server.getAllBooks();
