@@ -590,16 +590,31 @@ h1 {
         position: relative;
     }
 
+    .extended-border {
+        display: none;
+    }
+
+    #nav-side-bar li:not(.active):hover .extended-border{
+        display: block;
+        position: absolute;
+        margin-top: 0;
+        padding: 0;
+        right: 0;
+        top: -0.5;
+        width: 205%;
+        border-top: 1px solid #353330;
+    }
+
     #nav-side-bar li:not(.active):hover .subnav,
     #nav-side-bar li:not(.active) .subnav:not(.active):hover {
         display: block;
         position: absolute;
-        min-width: 120px;
-        left: 95%;
+        width: 90%;
+        left: 100%;
         top: -0.5em;
         background-color: white;
-        border: 1px solid #353330;
-        padding: 0.5em 1em 1em;
+        border-right: 1px solid #353330;
+        padding: 0 0 0.5em 0.5em;
         margin-top: 0;
     }
 
