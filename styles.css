@@ -589,8 +589,15 @@ h1 {
         position: relative;
     }
 
-    .subnav {
-        display: none;
+    li:not(.active) .subnav {
+        visibility: hidden;
+        height: 0;
+        width: 0;
+        position: absolute;
+        position: absolute;
+        left: 100%;
+        top: -0.5em;
+        transition: 0s;
     }
     
     .active .subnav {
@@ -598,12 +605,11 @@ h1 {
         position: relative;
     }
 
-    .extended-border {
+    .active .extended-border {
         display: none;
     }
 
-    #nav-side-bar li:not(.active):hover .extended-border{
-        display: block;
+    #nav-side-bar li:not(.active):hover .extended-border {
         position: absolute;
         margin-top: 0;
         padding: 0;
@@ -613,13 +619,12 @@ h1 {
         border-top: 1px solid #353330;
     }
 
-    #nav-side-bar li:not(.active):hover .subnav,
-    #nav-side-bar li:not(.active) .subnav:not(.active):hover {
-        display: block;
-        position: absolute;
+    #nav-side-bar li:not(.active):hover .subnav {
+        visibility: visible;
+        transition: 0.1s;
+        transition-delay: 0.5s;
+        height: auto;
         width: 90%;
-        left: 100%;
-        top: -0.5em;
         background-color: white;
         border-right: 1px solid #353330;
         padding: 0 0 0.5em 0.5em;
