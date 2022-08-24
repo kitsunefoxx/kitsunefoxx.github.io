@@ -109,7 +109,15 @@ fieldset legend {
     opacity: 0.8;
 }
 
-.nav a.active {
+.nav .active a {
+    opacity: 0.5;
+}
+
+.nav .active li a {
+    opacity: 1;
+}
+
+.nav .active .active a {
     opacity: 0.5;
 }
 

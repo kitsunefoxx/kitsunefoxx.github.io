@@ -40,6 +40,7 @@ let serverData;
         {
             handle: 'cobalt-blue',
             genre: 'fiction',
+            subgenre: 'thriller',
             title: 'Cobalt Blue',
             author: 'Matthew Reilly',
             price: 29.99,

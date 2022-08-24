@@ -27,14 +27,16 @@ function loadBook () {
             const coverImage = document.getElementById('cover-image');
             const titleElement = document.createElement('h1');
             const priceElement = document.createElement('h2');
+            const breadcrumbs = document.getElementById('breadcrumbs');
             titleElement.setAttribute('id', 'title');
             priceElement.setAttribute('id', 'price');
             titleElement.textContent = bookData.title;
             priceElement.textContent = '$' + bookData.price;
-            setActiveNavItem(bookData.genre);
+            setActiveNavItem(bookData.genre, bookData.subgenre);
             authorElement.parentNode.insertBefore(priceElement, authorElement);
             authorElement.parentNode.insertBefore(titleElement, authorElement);
-            document.getElementById('breadcrumbs').innerHTML = '<a href="index.html">Home</a> > <a href="collection.html?genre=' + bookData.genre + '">' + makeTitle(bookData.genre) + '</a> > ' + bookData.title;
+            if (bookData.subgenre) breadcrumbs.innerHTML = '<a href="index.html">Home</a> > <a href="collection.html?genre=' + bookData.genre + '">' + makeTitle(bookData.genre) + '</a> > <a href="collection.html?genre=' + bookData.genre + '&subgenre=' + bookData.subgenre + '">' + makeTitle(bookData.subgenre) + '</a> > ' + bookData.title;
+            else breadcrumbs.innerHTML = '<a href="index.html">Home</a> > <a href="collection.html?genre=' + bookData.genre + '">' + makeTitle(bookData.genre) + '</a> > ' + bookData.title;
             coverImage.setAttribute('src', 'img/' + bookData.image);
             coverImage.setAttribute('alt', bookData.title);
             coverImage.style.display = 'block';
@@ -81,14 +83,16 @@ function setSuggestedTitles (book) {
 
 function loadCollection () {
     const genre = urlParams.genre;
+    const subgenre = urlParams.subgenre;
     const searchTerms = urlParams.search;
     const messageBox = document.getElementById('message-box');
     const collectionTitle = document.getElementById('collection-title');
     const breadcrumbs = document.getElementById('breadcrumbs');
     const collectionPanel = document.getElementById('collection-panel');
-    setActiveNavItem(genre);
+    setActiveNavItem(genre, subgenre);
     if (genre) { // If genre papam in url attempt to get books for genre
-        breadcrumbs.innerHTML = '<a href="index.html">Home</a> > ' + makeTitle(genre);
+        if (subgenre) breadcrumbs.innerHTML = '<a href="index.html">Home</a> > <a href="collection.html?genre=' + genre + '">' + makeTitle(genre) + '</a> > ' + makeTitle(subgenre);
+        else breadcrumbs.innerHTML = '<a href="index.html">Home</a> > ' + makeTitle(genre);
         collectionTitle.innerHTML = makeTitle(genre);
         let books;
         if (genre.toLowerCase() === 'all' || genre.toLowerCase() === 'new-releases' || genre.toLowerCase() === 'best-sellers') {
@@ -115,13 +119,15 @@ function loadCollection () {
     } else messageBox.style.display = 'block';
 }
 
-function setActiveNavItem (id) {
+function setActiveNavItem (id, subid) {
     const activeItems = document.getElementsByClassName('active');
     for (let i = 0; i < activeItems.length; i++) {
         activeItems[i].classList.remove('active');
     }
     const newActiveItem = document.getElementById('nav-' + id);
+    const newSubActiveItem = document.getElementById('nav-' + id + '-' + subid);
     if (newActiveItem) newActiveItem.classList.add('active');
+    if (newSubActiveItem) newSubActiveItem.classList.add('active');
 }
 
 function makeCollectionItem (book) {
