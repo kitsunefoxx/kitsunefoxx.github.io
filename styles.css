@@ -578,6 +578,29 @@ h1 {
     #nav-side-bar li {
         color: black;
         color: var(--color-text-dark);
+        position: relative;
+    }
+
+    .subnav {
+        display: none;
+    }
+    
+    .active .subnav {
+        display: block;
+        position: relative;
+    }
+
+    #nav-side-bar li:not(.active):hover .subnav,
+    #nav-side-bar li:not(.active) .subnav:not(.active):hover {
+        display: block;
+        position: absolute;
+        min-width: 120px;
+        left: 95%;
+        top: -0.5em;
+        background-color: white;
+        border: 1px solid #353330;
+        padding: 0.5em 1em 1em;
+        margin-top: 0;
     }
 
     #nav-top-bar {
