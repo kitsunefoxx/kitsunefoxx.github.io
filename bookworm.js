@@ -35,8 +35,8 @@ function loadBook () {
             setActiveNavItem(bookData.genre, bookData.subgenre);
             authorElement.parentNode.insertBefore(priceElement, authorElement);
             authorElement.parentNode.insertBefore(titleElement, authorElement);
-            if (bookData.subgenre) breadcrumbs.innerHTML = '<a href="index.html">Home</a> > <a href="collection.html?genre=' + bookData.genre + '">' + makeTitle(bookData.genre) + '</a> > <a href="collection.html?genre=' + bookData.genre + '&subgenre=' + bookData.subgenre + '">' + makeTitle(bookData.subgenre) + '</a> > ' + bookData.title;
-            else breadcrumbs.innerHTML = '<a href="index.html">Home</a> > <a href="collection.html?genre=' + bookData.genre + '">' + makeTitle(bookData.genre) + '</a> > ' + bookData.title;
+            if (bookData.subgenre) breadcrumbs.innerHTML = '<a href="./">Home</a> > <a href="collection.html?genre=' + bookData.genre + '">' + makeTitle(bookData.genre) + '</a> > <a href="collection.html?genre=' + bookData.genre + '&subgenre=' + bookData.subgenre + '">' + makeTitle(bookData.subgenre) + '</a> > ' + bookData.title;
+            else breadcrumbs.innerHTML = '<a href="./">Home</a> > <a href="collection.html?genre=' + bookData.genre + '">' + makeTitle(bookData.genre) + '</a> > ' + bookData.title;
             coverImage.setAttribute('src', 'img/' + bookData.image);
             coverImage.setAttribute('alt', bookData.title);
             coverImage.style.display = 'block';
@@ -93,10 +93,10 @@ function loadCollection () {
     setActiveNavItem(genre, subgenre);
     if (genre) { // If genre papam in url attempt to get books for genre
         if (subgenre) {
-            breadcrumbs.innerHTML = '<a href="index.html">Home</a> > <a href="collection.html?genre=' + genre + '">' + makeTitle(genre) + '</a> > ' + makeTitle(subgenre);
+            breadcrumbs.innerHTML = '<a href="./">Home</a> > <a href="collection.html?genre=' + genre + '">' + makeTitle(genre) + '</a> > ' + makeTitle(subgenre);
             collectionTitle.innerHTML = makeTitle(genre) + ' - ' + makeTitle(subgenre);
         } else {
-            breadcrumbs.innerHTML = '<a href="index.html">Home</a> > ' + makeTitle(genre);
+            breadcrumbs.innerHTML = '<a href="./">Home</a> > ' + makeTitle(genre);
             collectionTitle.innerHTML = makeTitle(genre);
         }
         let books;
@@ -110,7 +110,7 @@ function loadCollection () {
         } else messageBox.style.display = 'block'
     } else if (searchTerms) {
         const results = server.searchBooks(String(searchTerms).split('-'));
-        breadcrumbs.innerHTML = '<a href="index.html">Home</a> > Search';
+        breadcrumbs.innerHTML = '<a href="./">Home</a> > Search';
         collectionTitle.innerHTML = 'Search';
         const searchTitle = document.createElement('h2');
         searchTitle.setAttribute('id', 'search-title')
