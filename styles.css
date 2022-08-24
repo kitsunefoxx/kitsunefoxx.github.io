@@ -121,6 +121,10 @@ fieldset legend {
     opacity: 0.5;
 }
 
+li:not(.active) .subnav {
+    display: none;
+}
+
 .home-main #more-books {
     display: none;
 }
@@ -590,6 +594,7 @@ h1 {
     }
 
     li:not(.active) .subnav {
+        display: block;
         visibility: hidden;
         height: 0;
         width: 0;
