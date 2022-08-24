@@ -113,6 +113,7 @@ function loadCollection () {
         breadcrumbs.innerHTML = '<a href="index.html">Home</a> > Search';
         collectionTitle.innerHTML = 'Search';
         const searchTitle = document.createElement('h2');
+        searchTitle.setAttribute('id', 'search-title')
         searchTitle.textContent = 'Search results for: ' + String(searchTerms).replace(/-/g, ' ');
         collectionPanel.parentNode.insertBefore(searchTitle, messageBox);
         // document.getElementById('searchTitle').innerHTML = '<h2>Search results for: ' + String(searchTerms).replace(/-/g, ' ') + '</h2>'; //replace dashes with spaces for diaplaying search terms
