@@ -71,9 +71,10 @@ function loadBook () {
 }
 
 function setSuggestedTitles (book) {
-    const suggestions = server.getAllBooks();
+    let suggestions = server.getAllBooks();
     const maxSuggestions = 6;
     const suggestionsPanel = document.getElementById('suggested-titles');
+    if (book) suggestions = suggestions.filter(function (suggested) { return !(suggested.handle === book.handle) }); // filter out current book
     for (let i = 0; i < maxSuggestions; i++) {
         if (suggestions[i]) {
             suggestionsPanel.appendChild(makeCollectionItem(suggestions[i]));
