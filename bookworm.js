@@ -137,6 +137,11 @@ function makeCollectionItem (book) {
         '<div class="cart-add-container"><button class="cart-add">Add to Cart</button></div>' +
       '</div>' +
     '</a>';
+    if (book.stock.toLowerCase() === 'out of stock') {
+        const cartAdd = collectionItem.getElementsByClassName('cart-add')[0];
+        cartAdd.textContent = 'Out of Stock';
+        cartAdd.style.backgroundColor = '#730919';
+    }
     return collectionItem;
 }
 
