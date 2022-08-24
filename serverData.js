@@ -99,7 +99,7 @@ let serverData;
             description: "<p>25th Anniversary Edition. Paulo Coelho's enchanting novel has inspired a devoted following around the world. Lush, evocative, and deeply humane, the story of Santiago is an eternal testament to the transforming power of our dreams and the importance of listening..</p>",
             image: 'the-alchemist.png',
             cover: 'Paperback',
-            stock: 'In Stock',
+            stock: 'Out of Stock',
             rating: 3
         },
         {
