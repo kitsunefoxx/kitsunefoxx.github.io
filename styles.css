@@ -2,8 +2,8 @@
 
 :root {
     --color1: #03380e;
-    --color2: #353330;
-    --color3: #5e3904;
+    --color2: #403e3a; /* #353330 */
+    --color3: #583604; /* #5E3904 */
     --color-text-dark: black;
     --color-text-light: white;
     --header-height: 150px;
@@ -33,7 +33,7 @@ body {
 }
 
 .dark-background {
-    background-color: #353330;
+    background-color: #403e3a;
 }
 
 fieldset {
@@ -45,7 +45,7 @@ fieldset legend {
 }
 
 #nav-collapse {
-    background-color: #353330;
+    background-color: #403e3a;
     color: white;
     width: 50px;
     height: 50px;
@@ -73,7 +73,7 @@ fieldset legend {
 
 .nav {
     display: none;
-    background-color: #353330;
+    background-color: #403e3a;
     background-color: var(--color2);
     color: var(--color-text-light);
     padding: 0 1em 1em;
@@ -151,7 +151,7 @@ h1 {
 }
 
 #header-bar {
-    background-color: #5e3904;
+    background-color: #583604;
     background-color: var(--color3);
     height: 50px;
     height: var(--nav-collapse-size);
@@ -172,7 +172,7 @@ h1 {
     font-size: 1.5em;
     font-weight: 600;
     color: white;
-    background-color: #5e3904;
+    background-color: #583604;
     color: var(--color-text-light);
     background-color: var(--color3);
     margin: 0;
@@ -217,7 +217,7 @@ h1 {
     margin: 1em;
     position: relative;
     overflow: hidden;
-    border: 2px solid #353330;
+    border: 2px solid #403e3a;
     border: 2px solid var(--color2);
     border-radius: 1em;
 }
@@ -228,7 +228,7 @@ h1 {
     font-size: 200%;
     font-weight: bolder;
     margin: 0;
-    background-color: #353330;
+    background-color: #403e3a;
     background-color: var(--color2);
     color: white;
     color: var(--color-text-light);
@@ -263,7 +263,7 @@ h1 {
     height: var(--footer-height-mobile);
     background-color: #03380e;
     color: white;
-    border-top: 10px solid #5e3904;
+    border-top: 10px solid #583604;
     background-color: var(--color1);
     border-top: var(--horizontal-border-width) solid var(--color3);
     color: var(--color-text-light);
@@ -343,7 +343,7 @@ h1 {
 }
 
 .cart-add {
-    background-color: #5e3904;
+    background-color: #583604;
     background-color: var(--color3);
     padding: 0.5em;
     width: 70%;
@@ -621,7 +621,7 @@ h1 {
         right: 0;
         top: -0.5;
         width: 205%;
-        border-top: 1px solid #353330;
+        border-top: 1px solid #403e3a;
     }
 
     #nav-side-bar li:not(.active):hover .subnav {
@@ -631,7 +631,7 @@ h1 {
         height: auto;
         width: 90%;
         background-color: white;
-        border-right: 1px solid #353330;
+        border-right: 1px solid #403e3a;
         padding: 0 0 0.5em 0.5em;
         margin-top: 0;
     }
@@ -649,7 +649,7 @@ h1 {
 
     #nav-top-bar li {
         float: left;
-        background-color: #5e3904;
+        background-color: #583604;
         background-color: var(--color3);
         padding: 8px;
         margin: 8px;
@@ -679,7 +679,7 @@ h1 {
     }
 
     .home-main #nav-side-bar {
-        background-color: #353330;
+        background-color: #403e3a;
         background-color: var(--color2);
         display: block;
         position: absolute;
@@ -858,7 +858,7 @@ h1 {
         width: 1400px;
         margin-left: auto;
         margin-right: auto;
-        border-left: 5px solid #353330;
-        border-right: 5px solid #353330;
+        border-left: 5px solid #403e3a;
+        border-right: 5px solid #403e3a;
     }
 }
