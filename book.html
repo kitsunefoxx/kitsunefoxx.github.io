@@ -6,11 +6,15 @@
         Bryan Abbott: 03191796
         Ross Pinfold: 07246927
         Andrew Trotter: 21017766
-        -->
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="Earthly Bookworm, a quaint little bookshop offering a vast collection of books ranging from novels to technical manuals, DIY and even textbooks.">
-        <meta name="author" content="Bryan Abbott, Ross Pinfold, Andrew Trotter ">
+
+        Logo Image obtained from http://clipart-library.com/
+        Decorative Images used on page from https://burst.shopify.com/
+        Sample book information and book cover images from https://www.whitcoulls.co.nz/
+    -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Earthly Bookworm, a quaint little bookshop offering a vast collection of books ranging from novels to technical manuals, DIY and even textbooks.">
+    <meta name="author" content="Bryan Abbott, Ross Pinfold, Andrew Trotter ">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="icon" type="image/x-icon" href="img/icon_logo.png">
@@ -19,142 +23,142 @@
     <script src="bookworm.js"></script>
 </head>
 <body>
-<header class="header">
-    <a href="./"><img src="img/logo_small.png" alt="Earthly Bookworm Logo" /></a>
-    <div id="header-bar" class=".clearfix">
-        <div id="header-icons" class=".clearfix">
-            <form action="javascript:void(0);" onsubmit="searchClick()">
-                <label hidden for="search-input">Search</label><input type="text" placeholder="Search.." id="search-input" onsubmit="searchClick()">
-                <button type="submit" aria-label="Show Search"><i class="fa fa-search"></i></button>
-            </form>
-            <button aria-label="Shopping Cart"><i class="fa fa-shopping-cart"></i></button>
-            <button aria-label="Account Button"><i class="fa fa-user"></i></button>
+    <header class="header">
+        <a href="./"><img src="img/logo_small.png" alt="Earthly Bookworm Logo" /></a>
+        <div id="header-bar" class=".clearfix">
+            <div id="header-icons" class=".clearfix">
+                <form action="javascript:void(0);" onsubmit="searchClick()">
+                    <label hidden for="search-input">Search</label><input type="text" placeholder="Search.." id="search-input" onsubmit="searchClick()">
+                    <button type="submit" aria-label="Show Search"><i class="fa fa-search"></i></button>
+                </form>
+                <button aria-label="Shopping Cart"><i class="fa fa-shopping-cart"></i></button>
+                <button aria-label="Account Button"><i class="fa fa-user"></i></button>
+            </div>
         </div>
-    </div>
-</header>
-<main class="main">
-    <div id="nav-collapse">
-        <hr />
-        <hr />
-        <hr />
-    </div>
-    <nav class="nav" id="navbar">
-        <ul id="nav-top-bar">
-            <li><a href="./">Home</a></li>
-            <li id="nav-new-releases"><a href="collection.html?genre=new-releases">New Releases</a></li>
-            <li id="nav-best-sellers"><a href="collection.html?genre=best-sellers">Best Sellers</a></li>
-            <li id="nav-specials"><a href="collection.html?genre=specials">Specials</a></li>
-            <li><a href="about.html">Our Story</a></li>
-        </ul>
-        <ul id="nav-side-bar">
-            <li id="nav-fiction">
-                <a href="collection.html?genre=fiction">Fiction</a>
-                <ul class="subnav">
-                    <li class="extended-border"></li>
-                    <li id="nav-fiction-thriller"><a href="collection.html?genre=fiction&subgenre=thriller">Thriller</a></li>
-                    <li id="nav-fiction-mystery"><a href="collection.html?genre=fiction&subgenre=mystery">Mystery</a></li>
-                    <li id="nav-fiction-science-fiction"><a href="collection.html?genre=fiction&subgenre=science-fiction">Science Fiction</a></li>
-                    <li id="nav-fiction-classics"><a href="collection.html?genre=fiction&subgenre=classics">Classics</a></li>
-                    <li id="nav-fiction-nz-fiction"><a href="collection.html?genre=fiction&subgenre=nz-fiction">NZ Fiction</a></li>
-                    <li id="nav-fiction-romance"><a href="collection.html?genre=fiction&subgenre=romance">Romance</a></li>
-                </ul>
-            </li>
-            <li id="nav-children">
-                <a href="collection.html?genre=children">Children</a>
-                <ul class="subnav">
-                    <li class="extended-border"></li>
-                    <li id="nav-children-activity"><a href="collection.html?genre=children&subgenre=activity">Activity</a></li>
-                    <li id="nav-children-fiction"><a href="collection.html?genre=children&subgenre=fiction">Fiction</a></li>
-                    <li id="nav-children-non-fiction"><a href="collection.html?genre=children&subgenre=non-fiction">Non-Fiction</a></li>
-                </ul>
-            </li>
-            <li id="nav-young-adult"><a href="collection.html?genre=young-adult">Young Adult</a></li>
-            <li id="nav-cookbooks">
-                <a href="collection.html?genre=cookbooks">Cookbooks</a>
-                <ul class="subnav">
-                    <li class="extended-border"></li>
-                    <li id="nav-cookbooks-general"><a href="collection.html?genre=cookbooks&subgenre=general">General</a></li>
-                    <li id="nav-cookbooks-celebrity"><a href="collection.html?genre=cookbooks&subgenre=celebrity">Celebrity</a></li>
-                    <li id="nav-cookbooks-diet-oriented"><a href="collection.html?genre=cookbooks&subgenre=diet-oriented">Diet Oriented</a></li>
-                </ul>
-            </li>
-            <li id="nav-family-health"><a href="collection.html?genre=family-health">Family & Health</a></li>
-            <li id="nav-home-garden"><a href="collection.html?genre=home-garden">Home & Garden</a></li>
-            <li id="nav-maoritanga"><a href="collection.html?genre=maoritanga">Maoritanga</a></li>
-            <li id="nav-travel"><a href="collection.html?genre=travel">Travel</a></li>
-        </ul>
-    </nav>
-    <section id="content-pane" >
-        <noscript><h2>This site requires Javascript to function:<br />Please enable Javascript in your browser.</h2></noscript>
-        <p id="breadcrumbs"></p>
-        <div id="message-box">
-            <h2>Sorry Book Not Found!!</h2>
-            <p> Thats not a title we currently have in our library. Please check back here in the future or <a href="">Contact Us</a> to let us know what we are missing</p>
+    </header>
+    <main class="main">
+        <div id="nav-collapse">
+            <hr />
+            <hr />
+            <hr />
         </div>
-        <section id="book-panel">
-            <img class="display-image" id="cover-image"  alt="Book Details"/>
-            <section id="book-details" class="clearfix">
-                <p id="author"></p>
-                <p id="cover"></p>
-                <p id="isbn"></p>
-                <div id="rating"></div>
-            </section>
-            <section id="book-purchase">
-                <p id="stock"></p>
-                <div id="shipping">
-                    <fieldset>
-                        <legend>Shipping Options</legend>
-                        <input type="radio" id="pickup" name="shipping" value="pickup">
-                        <label for="pickup">Pick Up - Free</label><br>
-                        <input type="radio" id="standard" name="shipping" value="standard" checked="checked">
-                        <label for="standard">Standard Shipping - $5 (Free for Members)</label><br>
-                        <input type="radio" id="overnight" name="shipping" value="overnight">
-                        <label for="overnight">Overnight Shipping - $15 ($10 for Members)</label><br>
-                    </fieldset>
-                </div>
-                <button class="cart-add" style="display: none;">Add to Cart</button>
-            </section>
-            <section id="description"></section>
-        </section>
-    </section>
-    <section id="suggestion-panel">
-        <h3>You May Also Like...</h3>
-        <div id="suggested-titles"></div>
-    </section>
-</main>
-<footer class="footer">
-    <div id="footer-col1">
-        <img class="payment-icons" src="img/Essential-Minimal-Payment-Icons.jpg" alt="">
-        <p>&copy; 2022 Earthly Bookworm Ltd</p>
-    </div>
-    <div id="footer-col2">
-        <h1>About Us</h1>
-        <ul>
-            <li><a href="">Contact Us</a></li>
-            <li><a href="about.html">Our Story</a></li>
-        </ul>
-    </div>
-    <div id="footer-col3">
-        <h1>Account</h1>
-        <ul>
-            <li><a href="">My Account</a></li>
-            <li><a href="">Returns</a></li>
+        <nav class="nav" id="navbar">
+            <ul id="nav-top-bar">
+                <li><a href="./">Home</a></li>
+                <li id="nav-new-releases"><a href="collection.html?genre=new-releases">New Releases</a></li>
+                <li id="nav-best-sellers"><a href="collection.html?genre=best-sellers">Best Sellers</a></li>
+                <li id="nav-specials"><a href="collection.html?genre=specials">Specials</a></li>
+                <li><a href="about.html">Our Story</a></li>
             </ul>
-    </div>
-    <div id="footer-col4">
-        <h1>Shopping</h1>
-        <ul>
-            <li><a href="./">Home</a></li>
-            <li><a href="">Shipping</a></li>
-            <li><a href="">FAQ</a></li>
-        </ul>
-    </div>
-    <div id="footer-col5">
-        <h1>Privacy Policy</h1>
-        <ul>
-            <li><a href="">Terms of Service</a></li>
-        </ul>
-    </div>
-</footer>
+            <ul id="nav-side-bar">
+                <li id="nav-fiction">
+                    <a href="collection.html?genre=fiction">Fiction</a>
+                    <ul class="subnav">
+                        <li class="extended-border"></li>
+                        <li id="nav-fiction-thriller"><a href="collection.html?genre=fiction&subgenre=thriller">Thriller</a></li>
+                        <li id="nav-fiction-mystery"><a href="collection.html?genre=fiction&subgenre=mystery">Mystery</a></li>
+                        <li id="nav-fiction-science-fiction"><a href="collection.html?genre=fiction&subgenre=science-fiction">Science Fiction</a></li>
+                        <li id="nav-fiction-classics"><a href="collection.html?genre=fiction&subgenre=classics">Classics</a></li>
+                        <li id="nav-fiction-nz-fiction"><a href="collection.html?genre=fiction&subgenre=nz-fiction">NZ Fiction</a></li>
+                        <li id="nav-fiction-romance"><a href="collection.html?genre=fiction&subgenre=romance">Romance</a></li>
+                    </ul>
+                </li>
+                <li id="nav-children">
+                    <a href="collection.html?genre=children">Children</a>
+                    <ul class="subnav">
+                        <li class="extended-border"></li>
+                        <li id="nav-children-activity"><a href="collection.html?genre=children&subgenre=activity">Activity</a></li>
+                        <li id="nav-children-fiction"><a href="collection.html?genre=children&subgenre=fiction">Fiction</a></li>
+                        <li id="nav-children-non-fiction"><a href="collection.html?genre=children&subgenre=non-fiction">Non-Fiction</a></li>
+                    </ul>
+                </li>
+                <li id="nav-young-adult"><a href="collection.html?genre=young-adult">Young Adult</a></li>
+                <li id="nav-cookbooks">
+                    <a href="collection.html?genre=cookbooks">Cookbooks</a>
+                    <ul class="subnav">
+                        <li class="extended-border"></li>
+                        <li id="nav-cookbooks-general"><a href="collection.html?genre=cookbooks&subgenre=general">General</a></li>
+                        <li id="nav-cookbooks-celebrity"><a href="collection.html?genre=cookbooks&subgenre=celebrity">Celebrity</a></li>
+                        <li id="nav-cookbooks-diet-oriented"><a href="collection.html?genre=cookbooks&subgenre=diet-oriented">Diet Oriented</a></li>
+                    </ul>
+                </li>
+                <li id="nav-family-health"><a href="collection.html?genre=family-health">Family & Health</a></li>
+                <li id="nav-home-garden"><a href="collection.html?genre=home-garden">Home & Garden</a></li>
+                <li id="nav-maoritanga"><a href="collection.html?genre=maoritanga">Maoritanga</a></li>
+                <li id="nav-travel"><a href="collection.html?genre=travel">Travel</a></li>
+            </ul>
+        </nav>
+        <section id="content-pane" >
+            <noscript><h2>This site requires Javascript to function:<br />Please enable Javascript in your browser.</h2></noscript>
+            <p id="breadcrumbs"></p>
+            <div id="message-box">
+                <h2>Sorry Book Not Found!!</h2>
+                <p> Thats not a title we currently have in our library. Please check back here in the future or <a href="">Contact Us</a> to let us know what we are missing</p>
+            </div>
+            <section id="book-panel">
+                <img class="display-image" id="cover-image"  alt="Book Details"/>
+                <section id="book-details" class="clearfix">
+                    <p id="author"></p>
+                    <p id="cover"></p>
+                    <p id="isbn"></p>
+                    <div id="rating"></div>
+                </section>
+                <section id="book-purchase">
+                    <p id="stock"></p>
+                    <div id="shipping">
+                        <fieldset>
+                            <legend>Shipping Options</legend>
+                            <input type="radio" id="pickup" name="shipping" value="pickup">
+                            <label for="pickup">Pick Up - Free</label><br>
+                            <input type="radio" id="standard" name="shipping" value="standard" checked="checked">
+                            <label for="standard">Standard Shipping - $5 (Free for Members)</label><br>
+                            <input type="radio" id="overnight" name="shipping" value="overnight">
+                            <label for="overnight">Overnight Shipping - $15 ($10 for Members)</label><br>
+                        </fieldset>
+                    </div>
+                    <button class="cart-add" style="display: none;">Add to Cart</button>
+                </section>
+                <section id="description"></section>
+            </section>
+        </section>
+        <section id="suggestion-panel">
+            <h3>You May Also Like...</h3>
+            <div id="suggested-titles"></div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div id="footer-col1">
+            <img class="payment-icons" src="img/Essential-Minimal-Payment-Icons.jpg" alt="">
+            <p>&copy; 2022 Earthly Bookworm Ltd</p>
+        </div>
+        <div id="footer-col2">
+            <h1>About Us</h1>
+            <ul>
+                <li><a href="">Contact Us</a></li>
+                <li><a href="about.html">Our Story</a></li>
+            </ul>
+        </div>
+        <div id="footer-col3">
+            <h1>Account</h1>
+            <ul>
+                <li><a href="">My Account</a></li>
+                <li><a href="">Returns</a></li>
+                </ul>
+        </div>
+        <div id="footer-col4">
+            <h1>Shopping</h1>
+            <ul>
+                <li><a href="./">Home</a></li>
+                <li><a href="">Shipping</a></li>
+                <li><a href="">FAQ</a></li>
+            </ul>
+        </div>
+        <div id="footer-col5">
+            <h1>Privacy Policy</h1>
+            <ul>
+                <li><a href="">Terms of Service</a></li>
+            </ul>
+        </div>
+    </footer>
 </body>
 </html>

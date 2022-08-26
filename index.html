@@ -1,138 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <!-- 
-            158.258: Assignment 2 Sample website
-            Bryan Abbott: 03191796
-            Ross Pinfold: 07246927
-            Andrew Trotter: 21017766
-         -->
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="Earthly Bookworm, a quaint little bookshop offering a vast collection of books ranging from novels to technical manuals, DIY and even textbooks.">
-        <meta name="author" content="Bryan Abbott, Ross Pinfold, Andrew Trotter ">
-        <link rel="stylesheet" href="styles.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="icon" type="image/x-icon" href="img/icon_logo.png">
-        <title>Earthly Bookworm</title>
-        <script src="serverData.js"></script>
-        <script src="bookworm.js"></script>
-    </head>
-    <body>
-        <header class="header">
-            <a href="./"><img src="img/logo_small.png" alt="Earthly Bookworm Logo" /></a>
-            <div id="header-bar" class=".clearfix">
-                <div id="header-icons" class=".clearfix">
-                    <form action="javascript:void(0);" onsubmit="searchClick()">
-                        <label hidden for="search-input">Search</label><input type="text" placeholder="Search.." id="search-input" onsubmit="searchClick()">
-                        <button type="submit" aria-label="Show Search"><i class="fa fa-search"></i></button>
-                </form>
-                <button aria-label="Shopping Cart"><i class="fa fa-shopping-cart"></i></button>
-                <button aria-label="Account Button"><i class="fa fa-user"></i></button>
-                </div>
+<head>
+    <!-- 
+        158.258: Assignment 2 Sample website
+        Bryan Abbott: 03191796
+        Ross Pinfold: 07246927
+        Andrew Trotter: 21017766
+
+        Logo Image obtained from http://clipart-library.com/
+        Decorative Images used on page from https://burst.shopify.com/
+        Sample book information and book cover images from https://www.whitcoulls.co.nz/
+    -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Earthly Bookworm, a quaint little bookshop offering a vast collection of books ranging from novels to technical manuals, DIY and even textbooks.">
+    <meta name="author" content="Bryan Abbott, Ross Pinfold, Andrew Trotter ">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" type="image/x-icon" href="img/icon_logo.png">
+    <title>Earthly Bookworm</title>
+    <script src="serverData.js"></script>
+    <script src="bookworm.js"></script>
+</head>
+<body>
+    <header class="header">
+        <a href="./"><img src="img/logo_small.png" alt="Earthly Bookworm Logo" /></a>
+        <div id="header-bar" class=".clearfix">
+            <div id="header-icons" class=".clearfix">
+                <form action="javascript:void(0);" onsubmit="searchClick()">
+                    <label hidden for="search-input">Search</label><input type="text" placeholder="Search.." id="search-input" onsubmit="searchClick()">
+                    <button type="submit" aria-label="Show Search"><i class="fa fa-search"></i></button>
+            </form>
+            <button aria-label="Shopping Cart"><i class="fa fa-shopping-cart"></i></button>
+            <button aria-label="Account Button"><i class="fa fa-user"></i></button>
             </div>
-        </header>
-        <main class="main home-main">
-            <div id="nav-collapse">
-                <hr />
-                <hr />
-                <hr />
-            </div>
-            <nav class="nav" id="navbar">
-            <ul id="nav-top-bar">
-                <li class="active"><a href="./">Home</a></li>
-                <li id="nav-new-releases"><a href="collection.html?genre=new-releases">New Releases</a></li>
-                <li id="nav-best-sellers"><a href="collection.html?genre=best-sellers">Best Sellers</a></li>
-                <li id="nav-specials"><a href="collection.html?genre=specials">Specials</a></li>
-                <li><a href="about.html">Our Story</a></li>
-                <li id="more-books" onclick="toggleMoreBooks() ">+</li>
-            </ul>
-            <ul id="nav-side-bar">
-                <li id="nav-fiction"><a href="collection.html?genre=fiction">Fiction</a></li>
-                <li id="nav-children"><a href="collection.html?genre=children">Children</a></li>
-                <li id="nav-young-adult"><a href="collection.html?genre=young-adult">Young Adult</a></li>
-                <li id="nav-cookbooks"><a href="collection.html?genre=cookbooks">Cookbooks</a></li>
-                <li id="nav-family-health"><a href="collection.html?genre=family-health">Family & Health</a></li>
-                <li id="nav-home-garden"><a href="collection.html?genre=home-garden">Home & Garden</a></li>
-                <li id="nav-maoritanga"><a href="collection.html?genre=maoritanga">Maoritanga</a></li>
-                <li id="nav-travel"><a href="collection.html?genre=travel">Travel</a></li>
-            </ul>
-            </nav>
-            <section id="content-pane">
-                <img class="fullwidth" src="img/large-leatherbound-book-on-a-bare-table.jpg" alt="Leather-bound book on table" />
-                <section class="home-section-container">
-                    <section class="home-section">
-                    <a href="collection.html?genre=new-releases">
-                        <h2>New Releases</h2>
-                        <div class="image-pane" style="background-image: url('img/woman-sits-on-a-bench-outdoors-with-a-book-smiling.jpg');"></div>
+        </div>
+    </header>
+    <main class="main home-main">
+        <div id="nav-collapse">
+            <hr />
+            <hr />
+            <hr />
+        </div>
+        <nav class="nav" id="navbar">
+        <ul id="nav-top-bar">
+            <li class="active"><a href="./">Home</a></li>
+            <li id="nav-new-releases"><a href="collection.html?genre=new-releases">New Releases</a></li>
+            <li id="nav-best-sellers"><a href="collection.html?genre=best-sellers">Best Sellers</a></li>
+            <li id="nav-specials"><a href="collection.html?genre=specials">Specials</a></li>
+            <li><a href="about.html">Our Story</a></li>
+            <li id="more-books" onclick="toggleMoreBooks() ">+</li>
+        </ul>
+        <ul id="nav-side-bar">
+            <li id="nav-fiction"><a href="collection.html?genre=fiction">Fiction</a></li>
+            <li id="nav-children"><a href="collection.html?genre=children">Children</a></li>
+            <li id="nav-young-adult"><a href="collection.html?genre=young-adult">Young Adult</a></li>
+            <li id="nav-cookbooks"><a href="collection.html?genre=cookbooks">Cookbooks</a></li>
+            <li id="nav-family-health"><a href="collection.html?genre=family-health">Family & Health</a></li>
+            <li id="nav-home-garden"><a href="collection.html?genre=home-garden">Home & Garden</a></li>
+            <li id="nav-maoritanga"><a href="collection.html?genre=maoritanga">Maoritanga</a></li>
+            <li id="nav-travel"><a href="collection.html?genre=travel">Travel</a></li>
+        </ul>
+        </nav>
+        <section id="content-pane">
+            <img class="fullwidth" src="img/large-leatherbound-book-on-a-bare-table.jpg" alt="Leather-bound book on table" />
+            <section class="home-section-container">
+                <section class="home-section">
+                <a href="collection.html?genre=new-releases">
+                    <h2>New Releases</h2>
+                    <div class="image-pane" style="background-image: url('img/woman-sits-on-a-bench-outdoors-with-a-book-smiling.jpg');"></div>
+                </a>
+                </section>
+                <section class="home-section">
+                <a href="collection.html?genre=best-sellers">
+                    <h2>Best Sellers</h2>
+                    <div class="image-pane" style="background-image: url('img/black-spectacles-otop-an-open-book.jpg');"></div>
+                </a>
+                </section>
+                <section class="home-section">
+                <a href="collection.html?genre=specials">
+                    <h2>Specials</h2>
+                    <div class="image-pane" style="background-image: url('img/classic-book-with-detailed-cover.jpg');"></div>
+                </a>
+                </section>
+                <section class="home-section">
+                <a href="collection.html?genre=children">
+                    <h2>Children</h2>
+                    <div class="image-pane" style="background-image: url('img/two-sisters-reading-together.jpg');"></div>
+                </a>
+                </section>
+                <section class="home-section">
+                    <a href="collection.html?genre=home-garden">
+                        <h2>Home & Garden</h2>
+                        <div class="image-pane" style="background-image: url('img/the-tui-bird-perched-atop-floral-branch.jpg');"></div>
                     </a>
-                    </section>
-                    <section class="home-section">
-                    <a href="collection.html?genre=best-sellers">
-                        <h2>Best Sellers</h2>
-                        <div class="image-pane" style="background-image: url('img/black-spectacles-otop-an-open-book.jpg');"></div>
+                </section>
+                <section class="home-section">
+                    <a href="about.html">
+                        <h2>Our Story</h2>
+                        <div class="image-pane" style="background-image: url('img/bookstore-frontage.jpg');"></div>
                     </a>
-                    </section>
-                    <section class="home-section">
-                    <a href="collection.html?genre=specials">
-                        <h2>Specials</h2>
-                        <div class="image-pane" style="background-image: url('img/classic-book-with-detailed-cover.jpg');"></div>
-                    </a>
-                    </section>
-                    <section class="home-section">
-                    <a href="collection.html?genre=children">
-                        <h2>Children</h2>
-                        <div class="image-pane" style="background-image: url('img/two-sisters-reading-together.jpg');"></div>
-                    </a>
-                    </section>
-                    <section class="home-section">
-                        <a href="collection.html?genre=home-garden">
-                            <h2>Home & Garden</h2>
-                            <div class="image-pane" style="background-image: url('img/the-tui-bird-perched-atop-floral-branch.jpg');"></div>
-                        </a>
-                    </section>
-                    <section class="home-section">
-                        <a href="about.html">
-                            <h2>Our Story</h2>
-                            <div class="image-pane" style="background-image: url('img/bookstore-frontage.jpg');"></div>
-                        </a>
-                    </section>
                 </section>
             </section>
-        </main>
-        <footer class="footer">
-            <div id="footer-col1">
-                <img class="payment-icons" src="img/Essential-Minimal-Payment-Icons.jpg" alt="">
-                <p>&copy; 2022 Earthly Bookworm Ltd</p>
-            </div>
-            <div id="footer-col2">
-                <h1>About Us</h1>
-                <ul>
-                    <li><a href="">Contact Us</a></li>
-                    <li><a href="about.html">Our Story</a></li>
-                </ul>
-            </div>
-            <div id="footer-col3">
-                <h1>Account</h1>
-                <ul>
-                    <li><a href="">My Account</a></li>
-                    <li><a href="">Returns</a></li>
-                </ul>
-            </div>
-            <div id="footer-col4">
-                <h1>Shopping</h1>
-                <ul>
-                    <li><a href="./">Home</a></li>
-                    <li><a href="">Shipping</a></li>
-                    <li><a href="">FAQ</a></li>
-                </ul>
-            </div>
-            <div id="footer-col5">
-                <h1>Privacy Policy</h1>
-                <ul>
-                    <li><a href="">Terms of Service</a></li>
-                </ul>
-            </div>
-        </footer>
-    </body>
+        </section>
+    </main>
+    <footer class="footer">
+        <div id="footer-col1">
+            <img class="payment-icons" src="img/Essential-Minimal-Payment-Icons.jpg" alt="">
+            <p>&copy; 2022 Earthly Bookworm Ltd</p>
+        </div>
+        <div id="footer-col2">
+            <h1>About Us</h1>
+            <ul>
+                <li><a href="">Contact Us</a></li>
+                <li><a href="about.html">Our Story</a></li>
+            </ul>
+        </div>
+        <div id="footer-col3">
+            <h1>Account</h1>
+            <ul>
+                <li><a href="">My Account</a></li>
+                <li><a href="">Returns</a></li>
+            </ul>
+        </div>
+        <div id="footer-col4">
+            <h1>Shopping</h1>
+            <ul>
+                <li><a href="./">Home</a></li>
+                <li><a href="">Shipping</a></li>
+                <li><a href="">FAQ</a></li>
+            </ul>
+        </div>
+        <div id="footer-col5">
+            <h1>Privacy Policy</h1>
+            <ul>
+                <li><a href="">Terms of Service</a></li>
+            </ul>
+        </div>
+    </footer>
+</body>
 </html>
